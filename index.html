@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rackz Gallery</title>
+  <link rel="icon" sizes="auto" href="./assets/logo.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    const submit = async e => {
+      e.preventDefault();
+      const url = 'https://ipfs.lateralthink.club/mailchimp/rackz/join';
+      const opts = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email_address: e.target.email.value })
+      }
+      const resp = await fetch(url, opts);
+      if (resp.ok) {
+        confetti({
+          spread: 360,
+          ticks: 200,
+          gravity: 1,
+          decay: 0.94,
+          startVelocity: 30,
+          particleCount: 100,
+          scalar: 3,
+          shapes: ["image"],
+          shapeOptions: {
+            image: [
+              {
+                src: "./assets/logo.svg",
+                width: 32,
+                height: 32,
+              }
+            ]
+          }
+        });
+        e.target.email.value = '';
+      } else {
+        console.log(await resp.json())
+      }
+    }
+
+    window.addEventListener('load', function () {
+      const form = document.getElementById("join");
+      form.addEventListener("submit", submit);
+    });
+  </script>
+</head>
+<body class="h-screen flex flex-col" style="font-family: Arial, Helvetica, sans-serif;">
+  <main class="flex-1 bg-[url(./assets/background.jpg)] bg-cover bg-bottom text-white">
+    <img src="./assets/gallery-logo.svg" alt="Rackz Gallery" width="300px" class="ml-10 mt-20">
+    <menu class="text-xs uppercase absolute end-px top-px mt-20 mr-10 flex">
+      <li class="px-5">
+        <a href="/shop">Shop</a>
+      </li>
+      <li class="px-5">
+        <a href="/23lookbook">'23 Look book</a>
+      </li>
+      <li class="px-5">
+        <a href="/media">Media</a>
+      </li>
+      <li class="px-5">
+        <a href="/team">Team</a>
+      </li>
+      <li class="px-5">
+        <a href="/virtualgallery">Virtual gallery</a>
+      </li>
+      <li class="px-5">
+        <a href="/about">About</a>
+      </li>
+      <li class="px-5">
+        <a href="/contact">Contact</a>
+      </li>
+    </menu>
+    <div class="relative float-right -mr-10 top-[25%] rotate-[270deg] text-xl uppercase">
+      <span>Chaos make the muse.</span>
+    </div>
+  </main>
+  <footer class="px-6 text-gray-400 text-sm flex justify-around items-center">
+    <a href="/policies" class="uppercase">Privacy policies</a>
+    <form id="join">
+      <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
+      <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
+    </form>
+    <div class="text-3xl">
+      <a href="https://www.instagram.com/rackz_gallery/" target="_blank" class="hover:text-gray-500">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@rackzgallery3437" target="_blank" class="hover:text-gray-500">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+    </div>
+    <div class="copyright">&copy; 2023 Rackz Gallery</div>
+  </footer>
+</body>
+</html>
