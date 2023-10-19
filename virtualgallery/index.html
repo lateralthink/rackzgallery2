@@ -46,10 +46,20 @@
       @apply bg-gray-100;
     }
 
-    .lt-template-buy-btn-feedback {
+    .lt-template-buy-btn-feedback, .lt-template-buy-btn-soldout {
       @apply p-2 mb-2;
     }
   </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NG984MWYM8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NG984MWYM8');
+  </script>
 </head>
 
 <body style="font-family: Arial, Helvetica, sans-serif;">
@@ -83,6 +93,7 @@
         </li>
       </menu>
       <script src="https://cs.lateralthink.club/build/albums.js" ver="4" chain="137" contract="0x43552ffACc05ecF440f102BB0b08C5e6386368E7" features="BuyButton, PriceAndAmount"></script>
+      <!-- <script src="http://localhost:9000/build/albums.js" ver="4" chain="137" contract="0x43552ffACc05ecF440f102BB0b08C5e6386368E7" features="BuyButton, PriceAndAmount"></script> -->
       <p class="text-center mt-20">
         Rackz Gallery team shows the world its first piece of art in the form of a video. A 15 minutes long piece where the style and aesthetics of Skateboard prevails and where the most prominent and promising riders of the national scene transmit the philosophy and principles of what the team understands as Skateboard.
       <p class="text-center">

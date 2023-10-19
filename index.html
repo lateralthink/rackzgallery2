@@ -7,6 +7,13 @@
   <link rel="icon" sizes="auto" href="./assets/logo.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+
   <script>
     const submit = async e => {
       e.preventDefault();
@@ -43,13 +50,13 @@
       }
     }
 
-    window.addEventListener('load', function () {
+    window.addEventListener('load', () => {
       const form = document.getElementById("join");
       form.addEventListener("submit", submit);
     });
   </script>
 </head>
-<body class="h-screen flex flex-col" style="font-family: Arial, Helvetica, sans-serif;">
+<body class="h-screen flex flex-col">
   <main class="flex-1 bg-[url(./assets/background.jpg)] bg-cover bg-bottom text-white">
     <img src="./assets/gallery-logo.svg" alt="Rackz Gallery" width="300px" class="ml-10 mt-20">
     <menu class="text-xs uppercase absolute end-px top-px mt-20 mr-10 flex">
@@ -80,7 +87,7 @@
     </div>
   </main>
   <footer class="px-6 text-gray-400 text-sm flex justify-around items-center">
-    <a href="/policies" class="uppercase">Privacy policies</a>
+    <a href="/policies/" class="uppercase">Privacy policies</a>
     <form id="join">
       <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
       <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>

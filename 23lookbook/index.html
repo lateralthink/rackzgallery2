@@ -6,16 +6,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rackz Gallery - Shop</title>
   <link rel="icon" sizes="auto" href="../assets/logo.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style type="text/tailwindcss">
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      --swiper-pagination-top: 8px;
+      --swiper-pagination-bottom: auto;
+    }
+
+    .swiper {
+      @apply w-screen h-screen;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+      @apply text-gray-200;
+    }
+
+    .swiper-pagination-bullet-active {
+      @apply bg-gray-600;
+    }
+
+    .swiper-pagination-bullet {
+      @apply w-full rounded h-[2px];
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NG984MWYM8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NG984MWYM8');
+  </script>
+
+  <script>
+    let swiperObj;
+
+    const swiper = initialSlide => {
+      if (!initialSlide) initialSlide = 0;
+      swiperObj = new Swiper('.swiper', {
+        // Optional parameters
+        initialSlide,
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }
+      });
+    }
+
+    const closeSwiper = () => {
+      const main = document.getElementById('main');
+      const sl = document.getElementById('slider');
+      main.classList.remove('hidden');
+      sl.classList.add('hidden');
+
+      swiperObj.destroy();
+    }
+
+    const slider = initialSlide => {
+      const main = document.getElementById('main');
+      const sl = document.getElementById('slider');
+      main.classList.add('hidden');
+      sl.classList.remove('hidden');
+      swiper(initialSlide);
+      const close = document.getElementById('swiper-close');
+      close.addEventListener('click', closeSwiper);
+    }
+  </script>
 </head>
 
-<body style="font-family: Arial, Helvetica, sans-serif;">
-  <main class="flex gap-10 p-20 h-screen">
-    <div class="bg-grey-200">
+<body>
+  <main id="main" class="flex gap-5 p-20 h-screen">
+    <div class="bg-grey-200 w-[16%]">
       <img src="../assets/logo.svg" alt="Rackz Gallery" width="100px" class="bg-black mb-10">
       <span>Fall / Winter 2023 by Rackz Gallery Skateboard Team</span>
     </div>
-    <div class="grow flex flex-col justify-start items-center">
+    <div class="grow flex flex-col justify-start items-center w-[84%]">
       <menu class="text-xs flex uppercase py-4 border-b border-b-black mt-10">
         <li class="pr-5">
           <a href="/shop">Shop</a>
@@ -39,8 +121,115 @@
           <a href="/contact">Contact</a>
         </li>
       </menu>
+      <div class="flex flex-wrap justify-center gap-2 py-5">
+        <button type="button" class="w-3/12" onclick="slider(0)">
+          <img src="../assets/lookbook/thumbs/LB23-01.jpg" alt="LB23-01">
+        </button>
+        <button type="button" class="w-3/12" onclick="slider(1)">
+          <img src="../assets/lookbook/thumbs/LB23-02.jpg" alt="LB23-02">
+        </button>
+        <button type="button" class="w-3/12" onclick="slider(2)">
+          <img src="../assets/lookbook/thumbs/LB23-03.jpg" alt="LB23-03">
+        </button>
+        <button type="button" class="w-3/12" onclick="slider(3)">
+          <img src="../assets/lookbook/thumbs/LB23-04.jpg" alt="LB23-04">
+        </button>
+        <button type="button" class="w-3/12" onclick="slider(4)">
+          <img src="../assets/lookbook/thumbs/LB23-05.jpg" alt="LB23-05">
+        </button>
+        <button type="button" class="w-3/12" onclick="slider(5)">
+          <img src="../assets/lookbook/thumbs/LB23-06.jpg" alt="LB23-06">
+        </button>
+        <button type="button" class="w-3/12" onclick="slider(6)">
+          <img src="../assets/lookbook/thumbs/LB23-07.jpg" alt="LB23-07">
+        </button>
+        <button type="button" class="w-3/12" onclick="slider(7)">
+          <img src="../assets/lookbook/thumbs/LB23-08.jpg" alt="LB23-08">
+        </button>
+        <button type="button" class="w-3/12" onclick="slider(8)">
+          <img src="../assets/lookbook/thumbs/LB23-09.jpg" alt="LB23-09">
+        </button>
+        <button type="button" class="w-3/12" onclick="slider(9)">
+          <img src="../assets/lookbook/thumbs/LB23-10.jpg" alt="LB23-10">
+        </button>
+        <button type="button" class="w-3/12" onclick="slider(10)">
+          <img src="../assets/lookbook/thumbs/LB23-11.jpg" alt="LB23-11">
+        </button>
+        <button type="button" class="w-3/12" onclick="slider(11)">
+          <img src="../assets/lookbook/thumbs/LB23-12.jpg" alt="LB23-12">
+        </button>
+        <button type="button" class="w-3/12" onclick="slider(12)">
+          <img src="../assets/lookbook/thumbs/LB23-13.jpg" alt="LB23-13">
+        </button>
+        <button type="button" class="w-3/12" onclick="slider(13)">
+          <img src="../assets/lookbook/thumbs/LB23-14.jpg" alt="LB23-14">
+        </button>
+        <button type="button" class="w-3/12" onclick="slider(14)">
+          <img src="../assets/lookbook/thumbs/LB23-15.jpg" alt="LB23-15">
+        </button>
+      </div>
     </div>
   </main>
+  <div id="slider" class="swiper hidden">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide flex justify-center">
+        <img src="../assets/lookbook/LB23-01.jpg" alt="LB23-01" class="h-full">
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img src="../assets/lookbook/LB23-02.jpg" alt="LB23-02" class="h-full">
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img src="../assets/lookbook/LB23-03.jpg" alt="LB23-03" class="h-full">
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img src="../assets/lookbook/LB23-04.jpg" alt="LB23-04" class="h-full">
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img src="../assets/lookbook/LB23-05.jpg" alt="LB23-05" class="h-full">
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img src="../assets/lookbook/LB23-06.jpg" alt="LB23-06" class="h-full">
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img src="../assets/lookbook/LB23-07.jpg" alt="LB23-07" class="h-full">
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img src="../assets/lookbook/LB23-08.jpg" alt="LB23-08" class="h-full">
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img src="../assets/lookbook/LB23-09.jpg" alt="LB23-09" class="h-full">
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img src="../assets/lookbook/LB23-10.jpg" alt="LB23-10" class="h-full">
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img src="../assets/lookbook/LB23-11.jpg" alt="LB23-11" class="h-full">
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img src="../assets/lookbook/LB23-12.jpg" alt="LB23-12" class="h-full">
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img src="../assets/lookbook/LB23-13.jpg" alt="LB23-13" class="h-full">
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img src="../assets/lookbook/LB23-14.jpg" alt="LB23-14" class="h-full">
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img src="../assets/lookbook/LB23-15.jpg" alt="LB23-15" class="h-full">
+      </div>
+    </div>
+
+    <div id="swiper-close" class="absolute top-0 right-2 text-3xl text-gray-400 cursor-pointer z-50">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+    <div class="swiper-pagination flex gap-2 px-10 mt-2 justify-around z-30"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
 </body>
 
 </html>
