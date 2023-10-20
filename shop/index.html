@@ -20,7 +20,7 @@
 </head>
 
 <body style="font-family: Arial, Helvetica, sans-serif;">
-  <main class="flex gap-10 p-20 h-screen">
+  <main class="flex gap-10 px-20 pt-20">
     <div class="bg-grey-200">
       <a href="/">
         <img src="../assets/logo.svg" alt="Rackz Gallery" width="100px" class="bg-black mb-10">
@@ -51,7 +51,7 @@
           <a href="/contact">Contact</a>
         </li>
       </menu>
-      <div id='shopify' class="pt-20 pb-10"></div>
+      <div id='shopify' class="pt-20"></div>
       <script type="text/javascript">
         /*<![CDATA[*/
         (function () {
@@ -293,6 +293,22 @@
       </script>
     </div>
   </main>
+  <footer class="px-6 text-gray-400 text-sm flex justify-around items-center">
+    <a href="/policies/" class="uppercase">Privacy policies</a>
+    <form id="join">
+      <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
+      <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
+    </form>
+    <div class="text-3xl">
+      <a href="https://www.instagram.com/rackz_gallery/" target="_blank" class="hover:text-gray-500">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@rackzgallery3437" target="_blank" class="hover:text-gray-500">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+    </div>
+    <div class="copyright">&copy; 2023 Rackz Gallery</div>
+  </footer>
 </body>
 
 </html>

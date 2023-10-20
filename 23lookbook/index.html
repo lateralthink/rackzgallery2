@@ -92,7 +92,7 @@
 </head>
 
 <body>
-  <main id="main" class="flex gap-5 p-20 h-screen">
+  <main id="main" class="flex gap-5 p-20">
     <div class="bg-grey-200 w-[16%]">
       <a href="/">
         <img src="../assets/logo.svg" alt="Rackz Gallery" width="100px" class="bg-black mb-10">
@@ -123,7 +123,7 @@
           <a href="/contact">Contact</a>
         </li>
       </menu>
-      <div class="flex flex-wrap justify-center gap-2 pt-20 pb-5">
+      <div class="flex flex-wrap justify-center gap-10 pt-20 pb-5">
         <button type="button" class="w-3/12" onclick="slider(0)">
           <img src="../assets/lookbook/thumbs/LB23-01.jpg" alt="LB23-01">
         </button>
@@ -172,6 +172,24 @@
       </div>
     </div>
   </main>
+
+  <footer class="px-6 bg-gray-100 text-sm flex justify-around items-center">
+    <a href="/policies/" class="uppercase">Privacy policies</a>
+    <form id="join">
+      <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
+      <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
+    </form>
+    <div class="text-3xl">
+      <a href="https://www.instagram.com/rackz_gallery/" target="_blank" class="hover:text-gray-500">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@rackzgallery3437" target="_blank" class="hover:text-gray-500">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+    </div>
+    <div class="copyright">&copy; 2023 Rackz Gallery</div>
+  </footer>
+
   <div id="slider" class="swiper hidden">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
