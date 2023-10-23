@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rackz Gallery v2 - Coming soon - Privacy policies</title>
+  <title>Rackz Gallery - Privacy policies</title>
   <link rel="icon" sizes="auto" href="../assets/logo.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <style>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style type="text/tailwindcss">
     body {
       font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding: 5rem;
-      display: flex;
-      gap: 2.5rem;
     }
 
-    .logo img {
-      background-color: black;
+    menu#main-menu li {
+      @apply px-5 pb-4 border-b border-b-black;
     }
 
-    .content h2:not(:first-child) {
-      padding-top: 2rem;
+    menu#main-menu li:first-child {
+      @apply pl-0;
+    }
+
+    menu#main-menu li:last-child {
+      @apply pr-0;
+    }
+
+    menu#mobile-menu li {
+      @apply my-4;
+    }
+
+    #mobile-footer > * {
+      @apply my-4
     }
   </style>
 
@@ -33,117 +45,212 @@
 
     gtag('config', 'G-NG984MWYM8');
   </script>
+
+  <script>
+    window.addEventListener('load', () => {
+      const burger = document.getElementById('burger');
+      burger.addEventListener('click', () => {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.remove('hidden');
+        const close = document.getElementById('close-menu');
+        close.addEventListener('click', () => {
+          menu.classList.add('hidden');
+        });
+      });
+    });
+  </script>
 </head>
+
 <body>
-  <div class="logo">
-    <a href="/">
-      <img src="../assets/logo.svg" alt="Rackz Gallery" width="100px" class="bg-black mb-10">
-    </a>
-  </div>
-  <div class="content">
-    <h2>Privacy Policy</h2>
-    <p>
-      The Brandz Supply company SL (hereinafter referred to as "Rackz Gallery") is committed to protecting the privacy of our users. This Privacy Policy explains how we collect, use, and share your personal information when you use our website.
-    </p>
-    <h2>Information We Collect</h2>
-    <p>We collect the following information from you when you use our website:</p>
-    <ul>
-      <li>
-        Your IP address: We collect your IP address to help us track website traffic and identify potential security threats.
-      </li>
-      <li>
-        Your browser and operating system: We collect information about your browser and operating system to help us ensure that our website is compatible with all major browsers and devices.
-      </li>
-      <li>
-        Your activity on our website: We collect information about your activity on our website, such as the pages you visit, the searches you perform, and the purchases you make.
-      </li>
-    </ul>
-    <h2>How We Use Your Information</h2>
-    <p>We use your personal information to:</p>
-    <ul>
-      <li>Provide you with access to our website and its features;</li>
-      <li>Personalize your experience on our website;</li>
-      <li>Process your purchases;</li>
-      <li>Communicate with you about your purchases and other matters;</li>
-      <li>Improve our website and services;</li>
-      <li>Detect and prevent fraud.</li>
-    </ul>
-    <h2>How We Share Your Information</h2>
-    <p>We share your personal information with the following third parties:</p>
-    <ul>
-      <li>
-        Payment processors: We share your personal information with payment processors to process your purchases.
-      </li>
-      <li>
-        Shipping and fulfillment companies: We share your personal information with shipping and fulfillment companies to deliver your purchases.
-      </li>
-      <li>
-        Fraud prevention companies: We share your personal information with fraud prevention companies to detect and prevent fraud.
-      </li>
-    </ul>
-    <h2>Your Choices</h2>
-    <p>You have the following choices regarding your personal information:</p>
-    <ul>
-      <li>
-        You can opt out of receiving marketing emails from us. To do so, click on the unsubscribe link at the bottom of any marketing email you receive from us.
-      </li>
-      <li>
-        You can request access to your personal information. To do so, please contact us at <a href="mailto:info@rackzgallery.com">Rackz Gallery</a>
-      </li>
-      <li>
-        You can request that we correct or delete your personal information. To do so, please contact us at <a href="mailto:info@rackzgallery.com">Rackz Gallery</a>
-      </li>
-    </ul>
-    <h2>Security</h2>
-    <p>
-      We take reasonable steps to protect your personal information from unauthorized access, use, or disclosure. However, no security system is perfect, and we cannot guarantee that your personal information will never be compromised.
-    </p>
-    <h2>Changes to This Privacy Policy</h2>
-    <p>
-      We may update this Privacy Policy from time to time. If we make any significant changes, we will post a notice on our website and send you an email (if you have provided us with your email address).
-    </p>
-    <h2>Contact Us</h2>
-    <p>
-      If you have any questions about this Privacy Policy, please contact us at <a href="mailto:info@rackzgallery.com">Rackz Gallery</a>
-    </p>
-    <h2>Terms and Conditions</h2>
-    <p>
-      Welcome to the Rackz Gallery website! These Terms and Conditions govern your use of our website and its services. By using our website, you agree to be bound by these Terms and Conditions.
-    </p>
-    <h2>Use of the Website</h2>
-    <p>
-      You agree to use our website in a lawful and responsible manner. You will not use our website to:
-    </p>
-    <ul>
-      <li>
-        Post or transmit any content that is harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, pornographic, invasive of privacy, or otherwise objectionable;
-      </li>
-      <li>Upload or transmit any viruses, Trojan horses, or other malicious code;</li>
-      <li>Interfere with the operation of our website or any other user's use of our website;</li>
-      <li>Impersonate any other person or entity;</li>
-      <li>
-        Forge any headers or otherwise manipulate identifiers in order to disguise the origin of any content transmitted through our website;
-      </li>
-      <li>Collect or store personal data about other users without their express consent;</li>
-      <li>Commercialize any part of our website or its services;</li>
-      <li>Use our website for any unlawful or unauthorized purpose.</li>
-    </ul>
-    <h2>Intellectual Property</h2>
-    <p>
-      All content on our website, including text, images, videos, and software, is protected by copyright and other intellectual property laws. You may not reproduce, distribute, transmit, publicly display, publicly perform, modify, or create derivative works from any content on our website without our express written permission.
-    </p>
-    <h2>Disclaimer of Warranties</h2>
-    <p>
-      Our website and its services are provided on an "as is" and "as available" basis. We make no warranties of any kind, express or implied, with respect to our website or its services, including any warranties of merchantability, fitness for a particular purpose, or non-infringement.
-    </p>
-    <h2>Limitation of Liability</h2>
-    <p>
-      To the fullest extent permitted by law, we shall not be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in connection with your use of our website or its services, even if we have been advised of the possibility of such damages.
-    </p>
-    <h2>Governing Law</h2>
-    <p>
-      These Terms and Conditions shall be governed by and construed in accordance with the laws of Spain, without regard to its conflict of law provisions.
-    </p>
-  </div>
+  <main id="main">
+    <header class="flex items-center m-4 md:mt-20 md:mb-10">
+      <a href="/" class="md:pl-10">
+        <img src="../assets/logo.svg" alt="Rackz Gallery" class="w-[50px] md:w-[100px] bg-black">
+      </a>
+      <div class="md:hidden grow text-center text-xs">
+        <div>Privacy policies</div>
+      </div>
+      <button id="burger" type="button" class="md:hidden"><i class="fa-solid fa-bars"></i></button>
+      <menu id="main-menu" class="grow hidden md:block">
+        <ol class="flex justify-center uppercase text-xs">
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/23lookbook">'23 Look book</a></li>
+          <li><a href="/media">Media</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/virtualgallery">Virtual gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ol>
+      </menu>
+    </header>
+    <section class="flex gap-10 mx-5 mb-5">
+      <div class="md:grow md:px-28 md:mb-28">
+        <h2 class="font-extrabold">Privacy Policy</h2>
+        <p class="mb-6">
+          The Brandz Supply company SL (hereinafter referred to as "Rackz Gallery") is committed to protecting the privacy of our users. This Privacy Policy explains how we collect, use, and share your personal information when you use our website.
+        </p>
+
+        <h2 class="font-extrabold">Information We Collect</h2>
+        <p>We collect the following information from you when you use our website:</p>
+        <ul class="mb-6">
+          <li>
+            Your IP address: We collect your IP address to help us track website traffic and identify potential security threats.
+          </li>
+          <li>
+            Your browser and operating system: We collect information about your browser and operating system to help us ensure that our website is compatible with all major browsers and devices.
+          </li>
+          <li>
+            Your activity on our website: We collect information about your activity on our website, such as the pages you visit, the searches you perform, and the purchases you make.
+          </li>
+        </ul>
+
+        <h2 class="font-extrabold">How We Use Your Information</h2>
+        <p>We use your personal information to:</p>
+        <ul class="mb-6">
+          <li>Provide you with access to our website and its features;</li>
+          <li>Personalize your experience on our website;</li>
+          <li>Process your purchases;</li>
+          <li>Communicate with you about your purchases and other matters;</li>
+          <li>Improve our website and services;</li>
+          <li>Detect and prevent fraud.</li>
+        </ul>
+
+        <h2 class="font-extrabold">How We Share Your Information</h2>
+        <p>We share your personal information with the following third parties:</p>
+        <ul class="mb-6">
+          <li>
+            Payment processors: We share your personal information with payment processors to process your purchases.
+          </li>
+          <li>
+            Shipping and fulfillment companies: We share your personal information with shipping and fulfillment companies to deliver your purchases.
+          </li>
+          <li>
+            Fraud prevention companies: We share your personal information with fraud prevention companies to detect and prevent fraud.
+          </li>
+        </ul>
+
+        <h2 class="font-extrabold">Your Choices</h2>
+        <p>You have the following choices regarding your personal information:</p>
+        <ul class="mb-6">
+          <li>
+            You can opt out of receiving marketing emails from us. To do so, click on the unsubscribe link at the bottom of any marketing email you receive from us.
+          </li>
+          <li>
+            You can request access to your personal information. To do so, please contact us at <a href="mailto:info@rackzgallery.com">Rackz Gallery</a>
+          </li>
+          <li>
+            You can request that we correct or delete your personal information. To do so, please contact us at <a href="mailto:info@rackzgallery.com">Rackz Gallery</a>
+          </li>
+        </ul>
+
+        <h2 class="font-extrabold">Security</h2>
+        <p class="mb-6">
+          We take reasonable steps to protect your personal information from unauthorized access, use, or disclosure. However, no security system is perfect, and we cannot guarantee that your personal information will never be compromised.
+        </p>
+
+        <h2 class="font-extrabold">Changes to This Privacy Policy</h2>
+        <p class="mb-6">
+          We may update this Privacy Policy from time to time. If we make any significant changes, we will post a notice on our website and send you an email (if you have provided us with your email address).
+        </p>
+
+        <h2 class="font-extrabold">Contact Us</h2>
+        <p class="mb-6">
+          If you have any questions about this Privacy Policy, please contact us at <a href="mailto:info@rackzgallery.com">Rackz Gallery</a>
+        </p>
+
+        <h2 class="font-extrabold">Terms and Conditions</h2>
+        <p class="mb-6">
+          Welcome to the Rackz Gallery website! These Terms and Conditions govern your use of our website and its services. By using our website, you agree to be bound by these Terms and Conditions.
+        </p>
+
+        <h2 class="font-extrabold">Use of the Website</h2>
+        <p>
+          You agree to use our website in a lawful and responsible manner. You will not use our website to:
+        </p>
+        <ul class="mb-6">
+          <li>
+            Post or transmit any content that is harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, pornographic, invasive of privacy, or otherwise objectionable;
+          </li>
+          <li>Upload or transmit any viruses, Trojan horses, or other malicious code;</li>
+          <li>Interfere with the operation of our website or any other user's use of our website;</li>
+          <li>Impersonate any other person or entity;</li>
+          <li>
+            Forge any headers or otherwise manipulate identifiers in order to disguise the origin of any content transmitted through our website;
+          </li>
+          <li>Collect or store personal data about other users without their express consent;</li>
+          <li>Commercialize any part of our website or its services;</li>
+          <li>Use our website for any unlawful or unauthorized purpose.</li>
+        </ul>
+
+        <h2 class="font-extrabold">Intellectual Property</h2>
+        <p class="mb-6">
+          All content on our website, including text, images, videos, and software, is protected by copyright and other intellectual property laws. You may not reproduce, distribute, transmit, publicly display, publicly perform, modify, or create derivative works from any content on our website without our express written permission.
+        </p>
+
+        <h2 class="font-extrabold">Disclaimer of Warranties</h2>
+        <p class="mb-6">
+          Our website and its services are provided on an "as is" and "as available" basis. We make no warranties of any kind, express or implied, with respect to our website or its services, including any warranties of merchantability, fitness for a particular purpose, or non-infringement.
+        </p>
+
+        <h2 class="font-extrabold">Limitation of Liability</h2>
+        <p class="mb-6">
+          To the fullest extent permitted by law, we shall not be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in connection with your use of our website or its services, even if we have been advised of the possibility of such damages.
+        </p>
+
+        <h2 class="font-extrabold">Governing Law</h2>
+        <p>
+          These Terms and Conditions shall be governed by and construed in accordance with the laws of Spain, without regard to its conflict of law provisions.
+        </p>
+      </div>
+    </section>
+    <menu id="mobile-menu" class="absolute top-0 right-0 bottom-0 text-white bg-gray-500 flex flex-col hidden">
+      <div class="w-full text-2xl text-right">
+        <button id="close-menu" class="pt-6 px-4"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <ol class="uppercase p-10 pt-0 grow">
+        <li><a href="/shop">Shop</a></li>
+        <li><a href="/23lookbook">'23 Look book</a></li>
+        <li><a href="/media">Media</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/virtualgallery">Virtual gallery</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ol>
+      <section id="mobile-footer" class="text-center">
+        <a href="/policies/" class="uppercase font-bold">Privacy policies</a>
+        <form id="join" class="px-4 flex">
+          <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
+          <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
+        </form>
+        <div class="text-3xl">
+          <a href="https://www.instagram.com/rackz_gallery/" target="_blank" class="hover:text-gray-500">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/@rackzgallery3437" target="_blank" class="hover:text-gray-500">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+        <div class="copyright">&copy; 2023 Rackz Gallery</div>
+      </section>
+    </menu>
+  </main>
+
+  <footer id="footer" class="hidden bg-gray-100 text-sm md:flex md:justify-around md:items-center">
+    <a href="/policies/" class="uppercase">Privacy policies</a>
+    <form id="join">
+      <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
+      <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
+    </form>
+    <div class="text-3xl">
+      <a href="https://www.instagram.com/rackz_gallery/" target="_blank" class="hover:text-gray-500">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@rackzgallery3437" target="_blank" class="hover:text-gray-500">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+    </div>
+    <div class="copyright">&copy; 2023 Rackz Gallery</div>
+  </footer>
 </body>
+
 </html>

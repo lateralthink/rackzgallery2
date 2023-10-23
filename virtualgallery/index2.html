@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rackz Gallery - Shop</title>
+  <link rel="icon" sizes="auto" href="../assets/logo.svg">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.1.2/web3.min.js" integrity="sha512-SY8ZHHpr1VtCWQ3a+YWBORQfRmBCZeSWgR5YJ7gW3XyhylLfIjPjva9fPc9xrjgFxFA95+7+ch7i15ykPiVcLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    .lt-album {
+      @apply flex flex-wrap justify-center gap-10 mt-20;
+    }
+
+    .lt-template {
+      @apply flex flex-col w-[20%] shadow-xl;
+    }
+
+    .lt-template figure {
+      @apply grow flex justify-center;
+    }
+
+    .lt-template img {
+      @apply object-contain;
+    }
+
+    .lt-template-content {
+      @apply p-2;
+    }
+
+    .lt-template-content-price-amount {
+      @apply flex justify-between;
+    }
+
+    .lt-template-actions {
+      @apply flex justify-center;
+    }
+
+    .lt-template-buy-btn, .lt-template-buy-btn, .lt-network-button {
+      @apply p-2 mb-2 border;
+    }
+
+    .lt-template-buy-btn:hover, .lt-template-buy-btn:hover, .lt-network-button:hover {
+      @apply bg-gray-100;
+    }
+
+    .lt-template-buy-btn-feedback, .lt-template-buy-btn-soldout {
+      @apply p-2 mb-2;
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NG984MWYM8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NG984MWYM8');
+  </script>
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif;">
+  <main class="flex gap-10 p-20 h-screen">
+    <div class="grow">
+      <a href="/">
+        <img src="../assets/logo.svg" alt="Rackz Gallery" width="100px" class="bg-black mb-10">
+      </a>
+      <span>PANDORA Rackz Gallery x Gerard Riera</span>
+    </div>
+    <div class="grow flex flex-col justify-start items-center">
+      <menu class="text-xs flex uppercase py-4 border-b border-b-black mt-10">
+        <li class="pr-5">
+          <a href="/shop">Shop</a>
+        </li>
+        <li class="px-5">
+          <a href="/23lookbook">'23 Look book</a>
+        </li>
+        <li class="px-5">
+          <a href="/media">Media</a>
+        </li>
+        <li class="px-5">
+          <a href="/team">Team</a>
+        </li>
+        <li class="px-5 font-bold">
+          <a href="/virtualgallery">Virtual gallery</a>
+        </li>
+        <li class="px-5">
+          <a href="/about">About</a>
+        </li>
+        <li class="pl-5">
+          <a href="/contact">Contact</a>
+        </li>
+      </menu>
+      <script src="https://cs.lateralthink.club/build/albums.js" ver="4" chain="137" contract="0x43552ffACc05ecF440f102BB0b08C5e6386368E7" features="BuyButton, PriceAndAmount"></script>
+      <p class="text-center mt-20">
+        Rackz Gallery team shows the world its first piece of art in the form of a video. A 15 minutes long piece where the style and aesthetics of Skateboard prevails and where the most prominent and promising riders of the national scene transmit the philosophy and principles of what the team understands as Skateboard.
+      <p class="text-center">
+        To commemorate this long awaited launch and immortalize the best moments of this journey, the company has counted with the collaboration of Gerard Riera, one of the best photographers in the world in the sector and who has a countless number of publications in magazines such as Trasher, FREE, SOLO or Dogway.
+      </p>
+      <p class="text-center">
+        Gerard and the team share a very clear philosophy in this world and that is that Skateboarding is art and for that reason have joined forces to launch the first pro- ject of NFT's where both offer the possibility that, defenders of the same philosophy, be part of the project by acquiring these unique works of art.Many of the works have been published in magazines and now the team gives the possibility for people to be the sole owner of it.
+      </p>
+      </p>
+      <div class="my-10 py-10 px-10 z-50 flex flex-col items-center">
+        <div class="container mx-auto flex flex-row flex-wrap justify-between">
+          <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
+            <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="1">What is an NFT?</h5>
+            <p class="clicker-content p-6 pt-0">
+              NFT stands for 'non-fungible token. An NFT is basically data that is accounted for in a digital ledger, and that data represents something specific and unique. An NFT can, for example, represent a unique piece of art or a game token.
+            </p>
+          </div>
+          <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
+            <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="4">
+              How to create a MetaMask Wallet
+            </h5>
+            <p class="clicker-content p-6 pt-0">
+              we recommend you to visit the official website https://metamask.io/. For more information you can contact our technical team at support@rackzgallery.com.
+            </p>
+          </div>
+          <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
+            <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="1">
+              What does “mint” mean?
+            </h5>
+            <p class="clicker-content p-6 pt-0">
+              NFT Minting is the process by which your digital art or digital content becomes a part of the blockchain.
+            </p>
+          </div>
+          <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
+            <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="4">
+              How much will it cost?
+            </h5>
+            <p class="clicker-content p-6 pt-0">
+              The cost is 350 MATIC. To this cost must be added the cost of Gas charged by the network, which does not depend on us. We recommend that you find out the times with low network fees in your place of residence.
+            </p>
+          </div>
+          <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
+            <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="3">How to Mint a NFT?</h5>
+            <p class="clicker-content p-6 pt-0">
+              Conect you Metamask Wallet. To get Started you will first need to open a crypto wallet and then connect it to our Virtual Gallery.
+            </p>
+          </div>
+          <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
+            <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="4">
+              How many NFT can I buy?
+            </h5>
+            <p class="clicker-content p-6 pt-0">There is no limit on purchases per registered Wallet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

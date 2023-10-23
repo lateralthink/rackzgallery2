@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rackz Gallery - Shop</title>
+  <link rel="icon" sizes="auto" href="../assets/logo.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NG984MWYM8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NG984MWYM8');
+  </script>
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif;">
+  <main class="flex gap-10 px-20 pt-20">
+    <div class="bg-grey-200">
+      <a href="/">
+        <img src="../assets/logo.svg" alt="Rackz Gallery" width="100px" class="bg-black mb-10">
+      </a>
+      <span>Fall / Winter 2023</span>
+    </div>
+    <div class="grow flex flex-col justify-start items-center">
+      <menu class="text-xs flex uppercase py-4 border-b border-b-black mt-10">
+        <li class="pr-5 font-bold">
+          <a href="/shop">Shop</a>
+        </li>
+        <li class="px-5">
+          <a href="/23lookbook">'23 Look book</a>
+        </li>
+        <li class="px-5">
+          <a href="/media">Media</a>
+        </li>
+        <li class="px-5">
+          <a href="/team">Team</a>
+        </li>
+        <li class="px-5">
+          <a href="/virtualgallery">Virtual gallery</a>
+        </li>
+        <li class="px-5">
+          <a href="/about">About</a>
+        </li>
+        <li class="pl-5">
+          <a href="/contact">Contact</a>
+        </li>
+      </menu>
+      <div id='shopify' class="pt-20"></div>
+      <script type="text/javascript">
+        /*<![CDATA[*/
+        (function () {
+          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+          if (window.ShopifyBuy) {
+            if (window.ShopifyBuy.UI) {
+              ShopifyBuyInit();
+            } else {
+              loadScript();
+            }
+          } else {
+            loadScript();
+          }
+
+          function loadScript() {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = scriptURL;
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+            script.onload = ShopifyBuyInit;
+          }
+
+          function ShopifyBuyInit() {
+            var client = ShopifyBuy.buildClient({
+              domain: 'rackzgallery.myshopify.com',
+              storefrontAccessToken: '155fbb76ae49b7bc397ab1de86bf043e',
+            });
+            ShopifyBuy.UI.onReady(client).then(function (ui) {
+              ui.createComponent('collection', {
+                id: '607678955868',
+                node: document.getElementById('shopify'),
+                moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
+                options: {
+                  "product": {
+                    "styles": {
+                      "product": {
+                        "@media (min-width: 601px)": {
+                          "max-width": "calc(20% - 40px)",
+                          "margin-left": "40px",
+                          "margin-bottom": "50px",
+                          "width": "calc(20% - 40px)"
+                        }
+                      },
+                      "title": {
+                        "font-family": "Arial, Helvetica, sans-serif",
+                        // "font-family": "Quantico, sans-serif",
+                        "font-size": "16px",
+                        "color": "#000000"
+                      },
+                      "button": {
+                        "font-size": "13px",
+                        "padding-top": "14.5px",
+                        "padding-bottom": "14.5px",
+                        ":hover": {
+                          "background-color": "#e6e6e6"
+                        },
+                        "background-color": "#ffffff",
+                        ":focus": {
+                          "background-color": "#e6e6e6"
+                        },
+                        "border-radius": "0px",
+                        "padding-left": "0px",
+                        "padding-right": "0px"
+                      },
+                      "quantityInput": {
+                        "font-size": "13px",
+                        "padding-top": "14.5px",
+                        "padding-bottom": "14.5px"
+                      },
+                      "price": {
+                        "font-family": "Arial, Helvetica, sans-serif"
+                        // "font-family": "Quantico, sans-serif"
+                      },
+                      "compareAt": {
+                        "font-family": "Arial, Helvetica, sans-serif"
+                        // "font-family": "Quantico, sans-serif"
+                      },
+                      "unitPrice": {
+                        "font-family": "Arial, Helvetica, sans-serif"
+                        // "font-family": "Quantico, sans-serif"
+                      }
+                    },
+                    "buttonDestination": "modal",
+                    "contents": {
+                      "button": false,
+                      "options": false
+                    },
+                    "isButton": true,
+                    "text": {
+                      "button": "View product"
+                    },
+                    // "googleFonts": [
+                    //   "Quantico"
+                    // ]
+                  },
+                  "productSet": {
+                    "styles": {
+                      "products": {
+                        "@media (min-width: 601px)": {
+                          "margin-left": "-40px"
+                        }
+                      }
+                    }
+                  },
+                  "modalProduct": {
+                    "contents": {
+                      "img": false,
+                      "imgWithCarousel": true,
+                      "button": false,
+                      "buttonWithQuantity": true
+                    },
+                    "styles": {
+                      "product": {
+                        "@media (min-width: 601px)": {
+                          "max-width": "100%",
+                          "margin-left": "0px",
+                          "margin-bottom": "0px"
+                        }
+                      },
+                      "button": {
+                        "font-size": "13px",
+                        "padding-top": "14.5px",
+                        "padding-bottom": "14.5px",
+                        ":hover": {
+                          "background-color": "#e6e6e6"
+                        },
+                        "background-color": "#ffffff",
+                        ":focus": {
+                          "background-color": "#e6e6e6"
+                        },
+                        "border-radius": "0px",
+                        "padding-left": "0px",
+                        "padding-right": "0px"
+                      },
+                      "quantityInput": {
+                        "font-size": "13px",
+                        "padding-top": "14.5px",
+                        "padding-bottom": "14.5px"
+                      },
+                      "title": {
+                        "font-family": "Arial, Helvetica, sans-serif",
+                        // "font-family": "Quantico, sans-serif",
+                        "font-weight": "bold",
+                        "font-size": "26px",
+                        "color": "#4c4c4c"
+                      },
+                      "price": {
+                        "font-family": "Arial, Helvetica, sans-serif",
+                        // "font-family": "Quantico, sans-serif",
+                        "font-weight": "normal",
+                        "font-size": "14px",
+                        "color": "#4c4c4c"
+                      },
+                      "compareAt": {
+                        "font-family": "Arial, Helvetica, sans-serif",
+                        // "font-family": "Quantico, sans-serif",
+                        "font-weight": "normal",
+                        "font-size": "11.9px",
+                        "color": "#4c4c4c"
+                      },
+                      "unitPrice": {
+                        "font-family": "Arial, Helvetica, sans-serif",
+                        // "font-family": "Quantico, sans-serif",
+                        "font-weight": "normal",
+                        "font-size": "11.9px",
+                        "color": "#4c4c4c"
+                      },
+                      "description": {
+                        // "font-family": "Quantico, sans-serif"
+                        "font-family": "Arial, Helvetica, sans-serif"
+                      }
+                    },
+                    // "googleFonts": [
+                    //   "Quantico"
+                    // ],
+                    "text": {
+                      "button": "Add to cart"
+                    }
+                  },
+                  "option": {
+                    "styles": {
+                      "label": {
+                        // "font-family": "Quantico, sans-serif"
+                        "font-family": "Arial, Helvetica, sans-serif"
+                      },
+                      "select": {
+                        // "font-family": "Quantico, sans-serif"
+                        "font-family": "Arial, Helvetica, sans-serif"
+                      }
+                    },
+                    // "googleFonts": [
+                    //   "Quantico"
+                    // ]
+                  },
+                  "cart": {
+                    "styles": {
+                      "button": {
+                        "font-size": "13px",
+                        "padding-top": "14.5px",
+                        "padding-bottom": "14.5px",
+                        ":hover": {
+                          "background-color": "#e6e6e6"
+                        },
+                        "background-color": "#ffffff",
+                        ":focus": {
+                          "background-color": "#e6e6e6"
+                        },
+                        "border-radius": "0px"
+                      }
+                    },
+                    "text": {
+                      "total": "Subtotal",
+                      "notice": "",
+                      "button": "Checkout"
+                    }
+                  },
+                  "toggle": {
+                    "styles": {
+                      "toggle": {
+                        "background-color": "#ffffff",
+                        ":hover": {
+                          "background-color": "#e6e6e6"
+                        },
+                        ":focus": {
+                          "background-color": "#e6e6e6"
+                        }
+                      },
+                      "count": {
+                        "font-size": "13px"
+                      }
+                    }
+                  }
+                },
+              });
+            });
+          }
+        })();
+        /*]]>*/
+      </script>
+    </div>
+  </main>
+  <footer class="px-6 text-gray-400 text-sm flex justify-around items-center">
+    <a href="/policies/" class="uppercase">Privacy policies</a>
+    <form id="join">
+      <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
+      <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
+    </form>
+    <div class="text-3xl">
+      <a href="https://www.instagram.com/rackz_gallery/" target="_blank" class="hover:text-gray-500">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@rackzgallery3437" target="_blank" class="hover:text-gray-500">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+    </div>
+    <div class="copyright">&copy; 2023 Rackz Gallery</div>
+  </footer>
+</body>
+
+</html>

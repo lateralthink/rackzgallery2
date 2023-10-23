@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rackz Gallery - Shop</title>
+  <title>Rackz Gallery - '23 look book</title>
   <link rel="icon" sizes="auto" href="../assets/logo.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -18,6 +18,26 @@
       font-family: Arial, Helvetica, sans-serif;
       --swiper-pagination-top: 8px;
       --swiper-pagination-bottom: auto;
+    }
+
+    menu#main-menu li {
+      @apply px-5 pb-4 border-b border-b-black;
+    }
+
+    menu#main-menu li:first-child {
+      @apply pl-0;
+    }
+
+    menu#main-menu li:last-child {
+      @apply pr-0;
+    }
+
+    menu#mobile-menu li {
+      @apply my-4;
+    }
+
+    #mobile-footer > * {
+      @apply my-4
     }
 
     .swiper {
@@ -72,8 +92,10 @@
 
     const closeSwiper = () => {
       const main = document.getElementById('main');
+      const footer = document.getElementById('footer');
       const sl = document.getElementById('slider');
       main.classList.remove('hidden');
+      footer.classList.remove('md:hidden');
       sl.classList.add('hidden');
 
       swiperObj.destroy();
@@ -81,99 +103,138 @@
 
     const slider = initialSlide => {
       const main = document.getElementById('main');
+      const footer = document.getElementById('footer');
       const sl = document.getElementById('slider');
       main.classList.add('hidden');
+      footer.classList.add('md:hidden');
       sl.classList.remove('hidden');
+
       swiper(initialSlide);
+
       const close = document.getElementById('swiper-close');
       close.addEventListener('click', closeSwiper);
     }
+
+    window.addEventListener('load', () => {
+      const burger = document.getElementById('burger');
+      burger.addEventListener('click', () => {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.remove('hidden');
+        const close = document.getElementById('close-menu');
+        close.addEventListener('click', () => {
+          menu.classList.add('hidden');
+        });
+      });
+    });
   </script>
 </head>
 
 <body>
-  <main id="main" class="flex gap-5 p-20">
-    <div class="bg-grey-200 w-[16%]">
-      <a href="/">
-        <img src="../assets/logo.svg" alt="Rackz Gallery" width="100px" class="bg-black mb-10">
+  <main id="main">
+    <header class="flex items-center m-4 md:mt-20 md:mb-10">
+      <a href="/" class="md:pl-10">
+        <img src="../assets/logo.svg" alt="Rackz Gallery" class="w-[50px] md:w-[100px] bg-black">
       </a>
-      <span>Fall / Winter 2023 by Rackz Gallery Skateboard Team</span>
-    </div>
-    <div class="grow flex flex-col justify-start items-center w-[84%]">
-      <menu class="text-xs flex uppercase py-4 border-b border-b-black mt-10">
-        <li class="pr-5">
-          <a href="/shop">Shop</a>
-        </li>
-        <li class="px-5 font-bold">
-          <a href="/23lookbook">'23 Look book</a>
-        </li>
-        <li class="px-5">
-          <a href="/media">Media</a>
-        </li>
-        <li class="px-5">
-          <a href="/team">Team</a>
-        </li>
-        <li class="px-5">
-          <a href="/virtualgallery">Virtual gallery</a>
-        </li>
-        <li class="px-5">
-          <a href="/about">About</a>
-        </li>
-        <li class="pl-5">
-          <a href="/contact">Contact</a>
-        </li>
+      <div class="md:hidden grow text-center text-xs">
+        <div>Fall / Winter 2023</div>
+        <div>by Rackz Gallery Skateboard Team</div>
+      </div>
+      <button id="burger" type="button" class="md:hidden"><i class="fa-solid fa-bars"></i></button>
+      <menu id="main-menu" class="grow hidden md:block">
+        <ol class="flex justify-center uppercase text-xs">
+          <li><a href="/shop">Shop</a></li>
+          <li class="font-bold"><a href="/23lookbook">'23 Look book</a></li>
+          <li><a href="/media">Media</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/virtualgallery">Virtual gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ol>
       </menu>
-      <div class="flex flex-wrap justify-center gap-10 pt-20 pb-5">
-        <button type="button" class="w-3/12" onclick="slider(0)">
+    </header>
+    <section class="flex mx-5 mb-5 text-center">
+      <div class="hidden md:inline-block md:w-full">Fall / Winter 2023 by Rackz Gallery Skateboard Team</div>
+      <div>
+        <button type="button" onclick="slider(0)">
           <img src="../assets/lookbook/thumbs/LB23-01.jpg" alt="LB23-01">
         </button>
-        <button type="button" class="w-3/12" onclick="slider(1)">
+        <button type="button" onclick="slider(1)">
           <img src="../assets/lookbook/thumbs/LB23-02.jpg" alt="LB23-02">
         </button>
-        <button type="button" class="w-3/12" onclick="slider(2)">
+        <button type="button" onclick="slider(2)">
           <img src="../assets/lookbook/thumbs/LB23-03.jpg" alt="LB23-03">
         </button>
-        <button type="button" class="w-3/12" onclick="slider(3)">
+        <button type="button" onclick="slider(3)">
           <img src="../assets/lookbook/thumbs/LB23-04.jpg" alt="LB23-04">
         </button>
-        <button type="button" class="w-3/12" onclick="slider(4)">
+        <button type="button" onclick="slider(4)">
           <img src="../assets/lookbook/thumbs/LB23-05.jpg" alt="LB23-05">
         </button>
-        <button type="button" class="w-3/12" onclick="slider(5)">
+        <button type="button" onclick="slider(5)">
           <img src="../assets/lookbook/thumbs/LB23-06.jpg" alt="LB23-06">
         </button>
-        <button type="button" class="w-3/12" onclick="slider(6)">
+        <button type="button" onclick="slider(6)">
           <img src="../assets/lookbook/thumbs/LB23-07.jpg" alt="LB23-07">
         </button>
-        <button type="button" class="w-3/12" onclick="slider(7)">
+        <button type="button" onclick="slider(7)">
           <img src="../assets/lookbook/thumbs/LB23-08.jpg" alt="LB23-08">
         </button>
-        <button type="button" class="w-3/12" onclick="slider(8)">
+        <button type="button" onclick="slider(8)">
           <img src="../assets/lookbook/thumbs/LB23-09.jpg" alt="LB23-09">
         </button>
-        <button type="button" class="w-3/12" onclick="slider(9)">
+        <button type="button" onclick="slider(9)">
           <img src="../assets/lookbook/thumbs/LB23-10.jpg" alt="LB23-10">
         </button>
-        <button type="button" class="w-3/12" onclick="slider(10)">
+        <button type="button" onclick="slider(10)">
           <img src="../assets/lookbook/thumbs/LB23-11.jpg" alt="LB23-11">
         </button>
-        <button type="button" class="w-3/12" onclick="slider(11)">
+        <button type="button" onclick="slider(11)">
           <img src="../assets/lookbook/thumbs/LB23-12.jpg" alt="LB23-12">
         </button>
-        <button type="button" class="w-3/12" onclick="slider(12)">
+        <button type="button" onclick="slider(12)">
           <img src="../assets/lookbook/thumbs/LB23-13.jpg" alt="LB23-13">
         </button>
-        <button type="button" class="w-3/12" onclick="slider(13)">
+        <button type="button" onclick="slider(13)">
           <img src="../assets/lookbook/thumbs/LB23-14.jpg" alt="LB23-14">
         </button>
-        <button type="button" class="w-3/12" onclick="slider(14)">
+        <button type="button" onclick="slider(14)">
           <img src="../assets/lookbook/thumbs/LB23-15.jpg" alt="LB23-15">
         </button>
       </div>
-    </div>
+    </section>
+    <menu id="mobile-menu" class="absolute top-0 right-0 bottom-0 text-white bg-gray-500 flex flex-col hidden">
+      <div class="w-full text-2xl text-right">
+        <button id="close-menu" class="pt-6 px-4"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <ol class="uppercase p-10 pt-0 grow">
+        <li><a href="/shop">Shop</a></li>
+        <li class="font-bold"><a href="/23lookbook">'23 Look book</a></li>
+        <li><a href="/media">Media</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/virtualgallery">Virtual gallery</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ol>
+      <section id="mobile-footer" class="text-center">
+        <a href="/policies/" class="uppercase">Privacy policies</a>
+        <form id="join" class="px-4 flex">
+          <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
+          <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
+        </form>
+        <div class="text-3xl">
+          <a href="https://www.instagram.com/rackz_gallery/" target="_blank" class="hover:text-gray-500">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/@rackzgallery3437" target="_blank" class="hover:text-gray-500">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+        <div class="copyright">&copy; 2023 Rackz Gallery</div>
+      </section>
+    </menu>
   </main>
 
-  <footer class="px-6 bg-gray-100 text-sm flex justify-around items-center">
+  <footer id="footer" class="hidden bg-gray-100 text-sm md:flex md:justify-around md:items-center">
     <a href="/policies/" class="uppercase">Privacy policies</a>
     <form id="join">
       <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">

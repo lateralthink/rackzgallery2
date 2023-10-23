@@ -4,18 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rackz Gallery - Shop</title>
+  <title>Rackz Gallery - Virtual gallery</title>
   <link rel="icon" sizes="auto" href="../assets/logo.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.1.2/web3.min.js" integrity="sha512-SY8ZHHpr1VtCWQ3a+YWBORQfRmBCZeSWgR5YJ7gW3XyhylLfIjPjva9fPc9xrjgFxFA95+7+ch7i15ykPiVcLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style type="text/tailwindcss">
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    menu#main-menu li {
+      @apply px-5 pb-4 border-b border-b-black;
+    }
+
+    menu#main-menu li:first-child {
+      @apply pl-0;
+    }
+
+    menu#main-menu li:last-child {
+      @apply pr-0;
+    }
+
+    menu#mobile-menu li {
+      @apply my-4;
+    }
+
+    #mobile-footer > * {
+      @apply my-4
+    }
+
     .lt-album {
-      @apply flex flex-wrap justify-center gap-10 mt-20;
+      @apply flex flex-wrap justify-center gap-10;
     }
 
     .lt-template {
-      @apply flex flex-col w-[20%] shadow-xl;
+      @apply flex flex-col md:w-[20%] shadow-xl;
     }
 
     .lt-template figure {
@@ -28,6 +55,10 @@
 
     .lt-template-content {
       @apply p-2;
+    }
+
+    .lt-template-content-title {
+      @apply flex justify-between mb-2;
     }
 
     .lt-template-content-price-amount {
@@ -60,99 +91,154 @@
 
     gtag('config', 'G-NG984MWYM8');
   </script>
+
+  <script>
+    window.addEventListener('load', () => {
+      const burger = document.getElementById('burger');
+      burger.addEventListener('click', () => {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.remove('hidden');
+        const close = document.getElementById('close-menu');
+        close.addEventListener('click', () => {
+          menu.classList.add('hidden');
+        });
+      });
+    });
+  </script>
 </head>
 
-<body style="font-family: Arial, Helvetica, sans-serif;">
-  <main class="flex gap-10 p-20 h-screen">
-    <div class="grow">
-      <a href="/">
-        <img src="../assets/logo.svg" alt="Rackz Gallery" width="100px" class="bg-black mb-10">
+<body>
+  <main id="main">
+    <header class="flex items-center m-4 md:mt-20 md:mb-10">
+      <a href="/" class="md:pl-10">
+        <img src="../assets/logo.svg" alt="Rackz Gallery" class="w-[50px] md:w-[100px] bg-black">
       </a>
-      <span>PANDORA Rackz Gallery x Gerard Riera</span>
-    </div>
-    <div class="grow flex flex-col justify-start items-center">
-      <menu class="text-xs flex uppercase py-4 border-b border-b-black mt-10">
-        <li class="pr-5">
-          <a href="/shop">Shop</a>
-        </li>
-        <li class="px-5">
-          <a href="/23lookbook">'23 Look book</a>
-        </li>
-        <li class="px-5">
-          <a href="/media">Media</a>
-        </li>
-        <li class="px-5">
-          <a href="/team">Team</a>
-        </li>
-        <li class="px-5 font-bold">
-          <a href="/virtualgallery">Virtual gallery</a>
-        </li>
-        <li class="px-5">
-          <a href="/about">About</a>
-        </li>
-        <li class="pl-5">
-          <a href="/contact">Contact</a>
-        </li>
+      <div class="md:hidden grow text-center text-xs">
+        <div>PANDORA Rackz Gallery</div>
+        <div>x Gerard Riera</div>
+      </div>
+      <button id="burger" type="button" class="md:hidden"><i class="fa-solid fa-bars"></i></button>
+      <menu id="main-menu" class="grow hidden md:block">
+        <ol class="flex justify-center uppercase text-xs">
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/23lookbook">'23 Look book</a></li>
+          <li><a href="/media">Media</a></li>
+          <li><a href="/team">Team</a></li>
+          <li class="font-bold"><a href="/virtualgallery">Virtual gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ol>
       </menu>
-      <script src="https://cs.lateralthink.club/build/albums.js" ver="4" chain="137" contract="0x43552ffACc05ecF440f102BB0b08C5e6386368E7" features="BuyButton, PriceAndAmount"></script>
-      <!-- <script src="http://localhost:9000/build/albums.js" ver="4" chain="137" contract="0x43552ffACc05ecF440f102BB0b08C5e6386368E7" features="BuyButton, PriceAndAmount"></script> -->
-      <p class="text-center mt-20">
-        Rackz Gallery team shows the world its first piece of art in the form of a video. A 15 minutes long piece where the style and aesthetics of Skateboard prevails and where the most prominent and promising riders of the national scene transmit the philosophy and principles of what the team understands as Skateboard.
-      <p class="text-center">
-        To commemorate this long awaited launch and immortalize the best moments of this journey, the company has counted with the collaboration of Gerard Riera, one of the best photographers in the world in the sector and who has a countless number of publications in magazines such as Trasher, FREE, SOLO or Dogway.
-      </p>
-      <p class="text-center">
-        Gerard and the team share a very clear philosophy in this world and that is that Skateboarding is art and for that reason have joined forces to launch the first pro- ject of NFT's where both offer the possibility that, defenders of the same philosophy, be part of the project by acquiring these unique works of art.Many of the works have been published in magazines and now the team gives the possibility for people to be the sole owner of it.
-      </p>
-      </p>
-      <div class="my-10 py-10 px-10 z-50 flex flex-col items-center">
-        <div class="container mx-auto flex flex-row flex-wrap justify-between">
-          <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
-            <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="1">What is an NFT?</h5>
-            <p class="clicker-content p-6 pt-0">
-              NFT stands for 'non-fungible token. An NFT is basically data that is accounted for in a digital ledger, and that data represents something specific and unique. An NFT can, for example, represent a unique piece of art or a game token.
-            </p>
-          </div>
-          <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
-            <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="4">
-              How to create a MetaMask Wallet
-            </h5>
-            <p class="clicker-content p-6 pt-0">
-              we recommend you to visit the official website https://metamask.io/. For more information you can contact our technical team at support@rackzgallery.com.
-            </p>
-          </div>
-          <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
-            <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="1">
-              What does “mint” mean?
-            </h5>
-            <p class="clicker-content p-6 pt-0">
-              NFT Minting is the process by which your digital art or digital content becomes a part of the blockchain.
-            </p>
-          </div>
-          <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
-            <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="4">
-              How much will it cost?
-            </h5>
-            <p class="clicker-content p-6 pt-0">
-              The cost is 350 MATIC. To this cost must be added the cost of Gas charged by the network, which does not depend on us. We recommend that you find out the times with low network fees in your place of residence.
-            </p>
-          </div>
-          <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
-            <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="3">How to Mint a NFT?</h5>
-            <p class="clicker-content p-6 pt-0">
-              Conect you Metamask Wallet. To get Started you will first need to open a crypto wallet and then connect it to our Virtual Gallery.
-            </p>
-          </div>
-          <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
-            <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="4">
-              How many NFT can I buy?
-            </h5>
-            <p class="clicker-content p-6 pt-0">There is no limit on purchases per registered Wallet.</p>
+    </header>
+    <section class="flex gap-10 mx-5 mb-5 text-center">
+      <div class="hidden md:inline-block md:w-2/12">PANDORA Rackz Gallery x Gerard Riera</div>
+      <div class="md:w-10/12 mx-5">
+        <script src="https://cs.lateralthink.club/build/albums.js" ver="4" chain="137" contract="0x43552ffACc05ecF440f102BB0b08C5e6386368E7" features="BuyButton, PriceAndAmount"></script>
+        <p class="text-center mt-20">
+          Rackz Gallery team shows the world its first piece of art in the form of a video. A 15 minutes long piece where the style and aesthetics of Skateboard prevails and where the most prominent and promising riders of the national scene transmit the philosophy and principles of what the team understands as Skateboard.
+        <p class="text-center">
+          To commemorate this long awaited launch and immortalize the best moments of this journey, the company has counted with the collaboration of Gerard Riera, one of the best photographers in the world in the sector and who has a countless number of publications in magazines such as Trasher, FREE, SOLO or Dogway.
+        </p>
+        <p class="text-center">
+          Gerard and the team share a very clear philosophy in this world and that is that Skateboarding is art and for that reason have joined forces to launch the first pro- ject of NFT's where both offer the possibility that, defenders of the same philosophy, be part of the project by acquiring these unique works of art.Many of the works have been published in magazines and now the team gives the possibility for people to be the sole owner of it.
+        </p>
+        </p>
+        <div class="my-10 py-10 px-10 z-50 flex flex-col items-center">
+          <div class="container mx-auto flex flex-row flex-wrap justify-between">
+            <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
+              <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="1">What is an NFT?</h5>
+              <p class="clicker-content p-6 pt-0">
+                NFT stands for 'non-fungible token. An NFT is basically data that is accounted for in a digital ledger, and that data represents something specific and unique. An NFT can, for example, represent a unique piece of art or a game token.
+              </p>
+            </div>
+            <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
+              <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="4">
+                How to create a MetaMask Wallet
+              </h5>
+              <p class="clicker-content p-6 pt-0">
+                we recommend you to visit the official website https://metamask.io/. For more information you can contact our technical team at support@rackzgallery.com.
+              </p>
+            </div>
+            <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
+              <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="1">
+                What does “mint” mean?
+              </h5>
+              <p class="clicker-content p-6 pt-0">
+                NFT Minting is the process by which your digital art or digital content becomes a part of the blockchain.
+              </p>
+            </div>
+            <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
+              <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="4">
+                How much will it cost?
+              </h5>
+              <p class="clicker-content p-6 pt-0">
+                The cost is 350 MATIC. To this cost must be added the cost of Gas charged by the network, which does not depend on us. We recommend that you find out the times with low network fees in your place of residence.
+              </p>
+            </div>
+            <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
+              <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="3">How to Mint a NFT?</h5>
+              <p class="clicker-content p-6 pt-0">
+                Conect you Metamask Wallet. To get Started you will first need to open a crypto wallet and then connect it to our Virtual Gallery.
+              </p>
+            </div>
+            <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
+              <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="4">
+                How many NFT can I buy?
+              </h5>
+              <p class="clicker-content p-6 pt-0">There is no limit on purchases per registered Wallet.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    <menu id="mobile-menu" class="absolute top-0 right-0 bottom-0 text-white bg-gray-500 flex flex-col hidden">
+      <div class="w-full text-2xl text-right">
+        <button id="close-menu" class="pt-6 px-4"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <ol class="uppercase p-10 pt-0 grow">
+        <li><a href="/shop">Shop</a></li>
+        <li><a href="/23lookbook">'23 Look book</a></li>
+        <li><a href="/media">Media</a></li>
+        <li><a href="/team">Team</a></li>
+        <li class="font-bold"><a href="/virtualgallery">Virtual gallery</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ol>
+      <section id="mobile-footer" class="text-center">
+        <a href="/policies/" class="uppercase">Privacy policies</a>
+        <form id="join" class="px-4 flex">
+          <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
+          <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
+        </form>
+        <div class="text-3xl">
+          <a href="https://www.instagram.com/rackz_gallery/" target="_blank" class="hover:text-gray-500">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/@rackzgallery3437" target="_blank" class="hover:text-gray-500">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+        <div class="copyright">&copy; 2023 Rackz Gallery</div>
+      </section>
+    </menu>
   </main>
+
+  <footer id="footer" class="hidden bg-[#c8c3b7] text-sm md:flex md:justify-around md:items-center">
+    <a href="/policies/" class="uppercase">Privacy policies</a>
+    <form id="join">
+      <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
+      <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
+    </form>
+    <div class="text-3xl">
+      <a href="https://www.instagram.com/rackz_gallery/" target="_blank" class="hover:text-gray-500">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@rackzgallery3437" target="_blank" class="hover:text-gray-500">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+    </div>
+    <div class="copyright">&copy; 2023 Rackz Gallery</div>
+  </footer>
 </body>
 
 </html>

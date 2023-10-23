@@ -4,13 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rackz Gallery - Shop</title>
+  <title>Rackz Gallery - Contact</title>
   <link rel="icon" sizes="auto" href="../assets/logo.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <style>
+  <style type="text/tailwindcss">
     body {
       font-family: Arial, Helvetica, sans-serif;
+    }
+
+    menu#main-menu li {
+      @apply px-5 pb-4 border-b border-b-black;
+    }
+
+    menu#main-menu li:first-child {
+      @apply pl-0;
+    }
+
+    menu#main-menu li:last-child {
+      @apply pr-0;
+    }
+
+    menu#mobile-menu li {
+      @apply my-4;
+    }
+
+    #mobile-footer > * {
+      @apply my-4
     }
   </style>
 
@@ -25,112 +47,119 @@
   </script>
 
   <script>
-    const alert = (msg, icon) => {
-      const div = document.createElement('div');
-      div.setAttribute('id', 'feedback');
-      const i = document.createElement('i');
-      i.classList.add = icon;
-      div.appendChild(i);
-      const p = document.createElement('p');
-      p.innerHTML = msg;
-      div.appendChild(p);
-      return div;
-    }
-
-    const submit = async e => {
-      e.preventDefault();
-      const data = {
-        email_address: e.target.email_address.value,
-        subject: e.target.subject.value,
-        msg: e.target.msg.value,
-        status: e.target.status.checked
-      }
-      const url = 'https://ipfs.lateralthink.club/mailchimp/rackz/msg';
-      const opts = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      }
-      const resp = await fetch(url, opts);
-      if (resp.ok) {
-        e.target.prepend(alert('Message received', 'fa-regular fa-circle-check'));
-        setTimeout(() => {
-          document.getElementById('feeback').remove();
-        }, 10000);
-
-        e.target.email_address.value = '';
-        e.target.subject.value = '';
-        e.target.msg.value = '';
-      } else {
-        console.log(await resp.json())
-      }
-    }
-
     window.addEventListener('load', () => {
-      const form = document.getElementById("contact");
-      form.addEventListener("submit", submit);
+      const burger = document.getElementById('burger');
+      burger.addEventListener('click', () => {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.remove('hidden');
+        const close = document.getElementById('close-menu');
+        close.addEventListener('click', () => {
+          menu.classList.add('hidden');
+        });
+      });
     });
   </script>
 </head>
 
 <body>
-  <main class="flex gap-10 p-20 h-screen">
-    <div class="bg-grey-200">
-      <a href="/">
-        <img src="../assets/logo.svg" alt="Rackz Gallery" width="100px" class="bg-black mb-10">
+  <main id="main">
+    <header class="flex items-center m-4 md:mt-20 md:mb-10">
+      <a href="/" class="md:pl-10">
+        <img src="../assets/logo.svg" alt="Rackz Gallery" class="w-[50px] md:w-[100px] bg-black">
+      </a>
+      <div class="md:hidden grow text-center text-xs">
+        <div>Contact</div>
+      </div>
+      <button id="burger" type="button" class="md:hidden"><i class="fa-solid fa-bars"></i></button>
+      <menu id="main-menu" class="grow hidden md:block">
+        <ol class="flex justify-center uppercase text-xs">
+          <li><a href="/shop">Shop</a></li>
+          <li><a href="/23lookbook">'23 Look book</a></li>
+          <li><a href="/media">Media</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/virtualgallery">Virtual gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li class="font-bold"><a href="/contact">Contact</a></li>
+        </ol>
+      </menu>
+    </header>
+    <section class="mx-5 mb-10">
+      <div class="media text-sm md:flex md:justify-center">
+        <form id="contact" class="md:w-1/2">
+          <div class="field mb-6">
+            <label for="email_address" class="block text-sm">Email</label>
+            <input id="email_address" type="email" class="border-b border-b-gray-400 w-full px-4 pt-2 outline-none">
+          </div>
+          <div class="field mb-6">
+            <label for="subject" class="block text-sm">Subject</label>
+            <input id="subject" type="text" class="border-b border-b-gray-400 w-full px-4 pt-2 outline-none">
+          </div>
+          <div class="field mb-6">
+            <label for="msg" class="block text-sm">Message</label>
+            <textarea id="msg"rows="10" class="border-b border-b-gray-400 w-full px-4 pt-2 outline-none"></textarea>
+          </div>
+          <div class="flex justify-between items-center">
+            <div class="field">
+              <label class="cursor-pointer">
+                <span>Join our newsletter</span>
+                <input id="status" type="checkbox" checked />
+              </label>
+            </div>
+            <button type="submit" class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">
+              Send message
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <menu id="mobile-menu" class="absolute top-0 right-0 bottom-0 text-white bg-gray-500 flex flex-col hidden">
+      <div class="w-full text-2xl text-right">
+        <button id="close-menu" class="pt-6 px-4"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <ol class="uppercase p-10 pt-0 grow">
+        <li><a href="/shop">Shop</a></li>
+        <li><a href="/23lookbook">'23 Look book</a></li>
+        <li><a href="/media">Media</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/virtualgallery">Virtual gallery</a></li>
+        <li><a href="/about">About</a></li>
+        <li class="font-bold"><a href="/contact">Contact</a></li>
+      </ol>
+      <section id="mobile-footer" class="text-center">
+        <a href="/policies/" class="uppercase">Privacy policies</a>
+        <form id="join" class="px-4 flex">
+          <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
+          <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
+        </form>
+        <div class="text-3xl">
+          <a href="https://www.instagram.com/rackz_gallery/" target="_blank" class="hover:text-gray-500">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/@rackzgallery3437" target="_blank" class="hover:text-gray-500">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+        <div class="copyright">&copy; 2023 Rackz Gallery</div>
+      </section>
+    </menu>
+  </main>
+
+  <footer id="footer" class="hidden bg-gray-100 text-sm md:flex md:justify-around md:items-center">
+    <a href="/policies/" class="uppercase">Privacy policies</a>
+    <form id="join">
+      <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
+      <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
+    </form>
+    <div class="text-3xl">
+      <a href="https://www.instagram.com/rackz_gallery/" target="_blank" class="hover:text-gray-500">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@rackzgallery3437" target="_blank" class="hover:text-gray-500">
+        <i class="fa-brands fa-youtube"></i>
       </a>
     </div>
-    <div class="grow flex flex-col justify-start items-center">
-      <menu class="text-xs flex uppercase py-4 border-b border-b-black mt-10 mb-12">
-        <li class="pr-5">
-          <a href="/shop">Shop</a>
-        </li>
-        <li class="px-5">
-          <a href="/23lookbook">'23 Look book</a>
-        </li>
-        <li class="px-5">
-          <a href="/media">Media</a>
-        </li>
-        <li class="px-5">
-          <a href="/team">Team</a>
-        </li>
-        <li class="px-5">
-          <a href="/virtualgallery">Virtual gallery</a>
-        </li>
-        <li class="px-5">
-          <a href="/about">About</a>
-        </li>
-        <li class="pl-5 font-bold">
-          <a href="/contact">Contact</a>
-        </li>
-      </menu>
-      <form id="contact" class="w-1/2">
-        <div class="field mb-6">
-          <label for="email_address" class="block text-sm">Email</label>
-          <input id="email_address" type="email" class="border-b border-b-gray-400 w-full px-4 pt-2 outline-none">
-        </div>
-        <div class="field mb-6">
-          <label for="subject" class="block text-sm">Subject</label>
-          <input id="subject" type="text" class="border-b border-b-gray-400 w-full px-4 pt-2 outline-none">
-        </div>
-        <div class="field mb-6">
-          <label for="msg" class="block text-sm">Message</label>
-          <textarea id="msg"rows="10" class="border-b border-b-gray-400 w-full px-4 pt-2 outline-none"></textarea>
-        </div>
-        <div class="flex justify-between items-center">
-          <div class="field">
-            <label class="cursor-pointer">
-              <span>Join our newsletter</span>
-              <input id="status" type="checkbox" checked />
-            </label>
-          </div>
-          <button type="submit" class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">
-            Send message
-          </button>
-        </div>
-      </form>
-    </div>
-  </main>
+    <div class="copyright">&copy; 2023 Rackz Gallery</div>
+  </footer>
 </body>
 
 </html>
