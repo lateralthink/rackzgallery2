@@ -111,13 +111,15 @@
   <main id="main">
     <header class="flex items-center m-4 md:mt-20 md:mb-10">
       <a href="/" class="md:pl-10">
-        <img src="../assets/logo.svg" alt="Rackz Gallery" class="w-[50px] md:w-[100px] bg-black">
+        <img src="../assets/logo.svg" alt="Rackz Gallery" class="w-[50px] md:w-[100px] md:bg-black bg-[#c8c3b7]">
       </a>
       <div class="md:hidden grow text-center text-xs">
         <div>PANDORA Rackz Gallery</div>
         <div>x Gerard Riera</div>
       </div>
-      <button id="burger" type="button" class="md:hidden"><i class="fa-solid fa-bars"></i></button>
+      <button id="burger" type="button" class="text-[2.5rem] text-[#c8c3b7] md:hidden">
+        <i class="fa-solid fa-bars"></i>
+      </button>
       <menu id="main-menu" class="grow hidden md:block">
         <ol class="flex justify-center uppercase text-xs">
           <li><a href="/shop">Shop</a></li>
@@ -146,13 +148,13 @@
         <div class="my-10 py-10 px-10 z-50 flex flex-col items-center">
           <div class="container mx-auto flex flex-row flex-wrap justify-between">
             <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
-              <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="1">What is an NFT?</h5>
+              <h5 class="text-lg uppercase p-6" tabindex="1">What is an NFT?</h5>
               <p class="clicker-content p-6 pt-0">
                 NFT stands for 'non-fungible token. An NFT is basically data that is accounted for in a digital ledger, and that data represents something specific and unique. An NFT can, for example, represent a unique piece of art or a game token.
               </p>
             </div>
             <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
-              <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="4">
+              <h5 class="text-lg uppercase p-6" tabindex="4">
                 How to create a MetaMask Wallet
               </h5>
               <p class="clicker-content p-6 pt-0">
@@ -160,7 +162,7 @@
               </p>
             </div>
             <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
-              <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="1">
+              <h5 class="text-lg uppercase p-6" tabindex="1">
                 What does “mint” mean?
               </h5>
               <p class="clicker-content p-6 pt-0">
@@ -168,7 +170,7 @@
               </p>
             </div>
             <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
-              <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="4">
+              <h5 class="text-lg uppercase p-6" tabindex="4">
                 How much will it cost?
               </h5>
               <p class="clicker-content p-6 pt-0">
@@ -176,13 +178,13 @@
               </p>
             </div>
             <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
-              <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="3">How to Mint a NFT?</h5>
+              <h5 class="text-lg uppercase p-6" tabindex="3">How to Mint a NFT?</h5>
               <p class="clicker-content p-6 pt-0">
                 Conect you Metamask Wallet. To get Started you will first need to open a crypto wallet and then connect it to our Virtual Gallery.
               </p>
             </div>
             <div class="faq-item w-full md:w-2/5 border-2 border-black mb-4">
-              <h5 class="text-lg uppercase cursor-pointer clicker p-6" tabindex="4">
+              <h5 class="text-lg uppercase p-6" tabindex="4">
                 How many NFT can I buy?
               </h5>
               <p class="clicker-content p-6 pt-0">There is no limit on purchases per registered Wallet.</p>
@@ -191,7 +193,7 @@
         </div>
       </div>
     </section>
-    <menu id="mobile-menu" class="absolute top-0 right-0 bottom-0 text-white bg-gray-500 flex flex-col hidden">
+    <menu id="mobile-menu" class="absolute top-0 right-0 bottom-0 text-white bg-black flex flex-col hidden opacity-80">
       <div class="w-full text-2xl text-right">
         <button id="close-menu" class="pt-6 px-4"><i class="fa-solid fa-xmark"></i></button>
       </div>
@@ -204,10 +206,9 @@
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
       </ol>
-      <section id="mobile-footer" class="text-center">
-        <a href="/policies/" class="uppercase">Privacy policies</a>
+      <section id="mobile-footer" class="text-center pb-4">
         <form id="join" class="px-4 flex">
-          <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
+          <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-white bg-black placeholder:text-white placeholder:uppercase w-56 px-4 pt-2 outline-none">
           <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
         </form>
         <div class="text-3xl">
@@ -219,14 +220,15 @@
           </a>
         </div>
         <div class="copyright">&copy; 2023 Rackz Gallery</div>
+        <a href="/policies/" class="uppercase">Privacy policies</a>
       </section>
     </menu>
   </main>
 
-  <footer id="footer" class="hidden bg-[#c8c3b7] text-sm md:flex md:justify-around md:items-center">
+  <footer id="footer" class="hidden text-white bg-[#c8c3b7] text-sm md:flex md:justify-around md:items-center">
     <a href="/policies/" class="uppercase">Privacy policies</a>
     <form id="join">
-      <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
+      <input id="email" type="email" placeholder="Join our newsletter" class="bg-[#c8c3b7] border-b border-b-white placeholder:text-white placeholder:uppercase w-56 px-4 pt-2 outline-none">
       <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
     </form>
     <div class="text-3xl">

@@ -47,6 +47,38 @@
   </script>
 
   <script>
+    const submit = async e => {
+      e.preventDefault();
+      console.log(e.target.email_address.value)
+      console.log(e.target.subject.value)
+      console.log(e.target.msg.value)
+      console.log(e.target.status.checked)
+      const formId = '1KkEjydjoa2ULhHRyRyxad-ooFSh5FbDp7y5den7ZWxk';
+      const formOpts = {
+        method: 'POST',
+
+      }
+      if (e.target.status.checked) {
+        const joinOpts = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email_address: e.target.email.value })
+        }
+        const [respForm, respJoin] = await Promise.all([
+          fetch(`https://docs.google.com/forms/d/e/${ formId }/formResponse`, formOpts),
+          fetch('https://ipfs.lateralthink.club/mailchimp/rackz/join', joinOpts)
+        ]);
+        if (respJoin.ok) {
+
+        }
+      } else {
+        const respForm = await fetch(`https://docs.google.com/forms/d/e/${ formId }/formResponse`, formOpts);
+      }
+      if (respForm.ok) {
+
+      }
+    }
+
     window.addEventListener('load', () => {
       const burger = document.getElementById('burger');
       burger.addEventListener('click', () => {
@@ -57,6 +89,9 @@
           menu.classList.add('hidden');
         });
       });
+
+      const form = document.getElementById('contact');
+      form.addEventListener('submit', submit);
     });
   </script>
 </head>
@@ -65,12 +100,14 @@
   <main id="main">
     <header class="flex items-center m-4 md:mt-20 md:mb-10">
       <a href="/" class="md:pl-10">
-        <img src="../assets/logo.svg" alt="Rackz Gallery" class="w-[50px] md:w-[100px] bg-black">
+        <img src="../assets/logo.svg" alt="Rackz Gallery" class="w-[50px] md:w-[100px] md:bg-black bg-[#c8c3b7]">
       </a>
       <div class="md:hidden grow text-center text-xs">
         <div>Contact</div>
       </div>
-      <button id="burger" type="button" class="md:hidden"><i class="fa-solid fa-bars"></i></button>
+      <button id="burger" type="button" class="text-[2.5rem] text-[#c8c3b7] md:hidden">
+        <i class="fa-solid fa-bars"></i>
+      </button>
       <menu id="main-menu" class="grow hidden md:block">
         <ol class="flex justify-center uppercase text-xs">
           <li><a href="/shop">Shop</a></li>
@@ -86,6 +123,33 @@
     <section class="mx-5 mb-10">
       <div class="media text-sm md:flex md:justify-center">
         <form id="contact" class="md:w-1/2">
+
+          <div id="submittedAlert" class="w-full flex gap-4 items-center text-green-800 bg-green-200 px-4 py-6 mb-6 hidden">
+            <span class="text-2xl"><i class="fa-regular fa-circle-check"></i></span>
+            <p class="grow">Your message has been sended</p>
+          </div>
+
+          <div id="submittedJoin" class="w-full flex gap-4 items-center text-green-800 bg-green-200 px-4 py-6 mb-6 hidden">
+            <span class="text-2xl"><i class="fa-regular fa-circle-check"></i></span>
+            <p class="grow">You have been subscribed to our newsletter</p>
+          </div>
+
+          <div id="contactError" class="w-full flex gap-4 items-center text-red-800 bg-red-200 px-4 py-6 mb-6 hidden">
+            <span class="text-2xl"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            <div>
+              <p class="grow">We can't process your message right now</p>
+              <p>Please, try it in a few minutes</p>
+            </div>
+          </div>
+
+          <div id="joinError" class="w-full flex gap-4 items-center text-red-800 bg-red-200 px-4 py-6 mb-6 hidden">
+            <span class="text-2xl"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            <div>
+              <p class="grow">We can't subscribe you to our newsletter right now</p>
+              <p>Please, try it in a few minutes</p>
+            </div>
+          </div>
+
           <div class="field mb-6">
             <label for="email_address" class="block text-sm">Email</label>
             <input id="email_address" type="email" class="border-b border-b-gray-400 w-full px-4 pt-2 outline-none">
@@ -112,7 +176,7 @@
         </form>
       </div>
     </section>
-    <menu id="mobile-menu" class="absolute top-0 right-0 bottom-0 text-white bg-gray-500 flex flex-col hidden">
+    <menu id="mobile-menu" class="absolute top-0 right-0 bottom-0 text-white bg-black flex flex-col hidden opacity-80">
       <div class="w-full text-2xl text-right">
         <button id="close-menu" class="pt-6 px-4"><i class="fa-solid fa-xmark"></i></button>
       </div>
@@ -125,10 +189,9 @@
         <li><a href="/about">About</a></li>
         <li class="font-bold"><a href="/contact">Contact</a></li>
       </ol>
-      <section id="mobile-footer" class="text-center">
-        <a href="/policies/" class="uppercase">Privacy policies</a>
+      <section id="mobile-footer" class="text-center pb-4">
         <form id="join" class="px-4 flex">
-          <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
+          <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-white bg-black placeholder:text-white placeholder:uppercase w-56 px-4 pt-2 outline-none">
           <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
         </form>
         <div class="text-3xl">
@@ -140,14 +203,15 @@
           </a>
         </div>
         <div class="copyright">&copy; 2023 Rackz Gallery</div>
+        <a href="/policies/" class="uppercase">Privacy policies</a>
       </section>
     </menu>
   </main>
 
-  <footer id="footer" class="hidden bg-gray-100 text-sm md:flex md:justify-around md:items-center">
+  <footer id="footer" class="hidden text-white bg-[#c8c3b7] text-sm md:flex md:justify-around md:items-center">
     <a href="/policies/" class="uppercase">Privacy policies</a>
     <form id="join">
-      <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-gray-400 placeholder:uppercase w-56 px-4 pt-2 outline-none">
+      <input id="email" type="email" placeholder="Join our newsletter" class="bg-[#c8c3b7] border-b border-b-white placeholder:text-white placeholder:uppercase w-56 px-4 pt-2 outline-none">
       <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
     </form>
     <div class="text-3xl">
