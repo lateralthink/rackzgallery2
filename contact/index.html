@@ -50,37 +50,19 @@
 
   <script src="../assets/basic.js"></script>
   <script>
-    const submit = async e => {
+    const contact = async e => {
       e.preventDefault();
-      console.log(e.target.email_address.value)
-      console.log(e.target.subject.value)
-      console.log(e.target.msg.value)
-      console.log(e.target.status.checked)
-      const formId = '1KkEjydjoa2ULhHRyRyxad-ooFSh5FbDp7y5den7ZWxk';
-      const formOpts = {
-        method: 'POST',
-
-      }
       if (e.target.status.checked) {
-        const joinOpts = {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email_address: e.target.email.value })
-        }
-        const [respForm, respJoin] = await Promise.all([
-          fetch(`https://docs.google.com/forms/d/e/${ formId }/formResponse`, formOpts),
-          fetch('https://ipfs.lateralthink.club/mailchimp/rackz/join', joinOpts)
-        ]);
-        if (respJoin.ok) {
-
-        }
-      } else {
-        const respForm = await fetch(`https://docs.google.com/forms/d/e/${ formId }/formResponse`, formOpts);
-      }
-      if (respForm.ok) {
-
+        try {
+          await join(e.target.email_address.value)
+        } catch (err) { console.log(err) }
       }
     }
+
+    window.addEventListener('load', () => {
+      const form = document.getElementById('contact');
+      form.addEventListener('submit', contact);
+    });
   </script>
 </head>
 
@@ -110,7 +92,7 @@
     </header>
     <section class="mx-5 mb-10">
       <div class="media text-sm md:flex md:justify-center">
-        <form id="contact" class="md:w-1/2">
+        <form id="contact" class="md:w-1/2" netlify>
 
           <div id="submittedAlert" class="w-full flex gap-4 items-center text-green-800 bg-green-200 px-4 py-6 mb-6 hidden">
             <span class="text-2xl"><i class="fa-regular fa-circle-check"></i></span>
