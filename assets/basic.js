@@ -54,6 +54,7 @@ const sendMsg = async form => {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(new FormData(form)).toString(),
   }
+  console.log(opts)
   try {
     await fetch('/', opts);
     console.log('done')
