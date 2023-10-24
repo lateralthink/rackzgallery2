@@ -48,6 +48,18 @@ const joinMobile = async e => {
   } catch (err) { console.log(err.cause) }
 }
 
+const sendMsg = async form => {
+  const opts = {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(new FormData(form)).toString(),
+  }
+  try {
+    await fetch('/', opts);
+    console.log('done')
+  } catch (err) { console.log(err) }
+}
+
 window.addEventListener('load', () => {
   const burger = document.getElementById('burger');
   burger.addEventListener('click', () => {
