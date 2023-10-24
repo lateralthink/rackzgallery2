@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rackz Gallery - Shop</title>
   <link rel="icon" sizes="auto" href="../assets/logo.svg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -40,7 +42,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NG984MWYM8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-NG984MWYM8');
@@ -67,7 +69,9 @@
       <a href="/" class="md:pl-10">
         <img src="../assets/logo.svg" alt="Rackz Gallery" class="w-[50px] md:w-[100px] md:bg-black bg-[#c8c3b7]">
       </a>
-      <div class="md:hidden grow text-center text-xs"><div>Fall / Winter 2023</div> </div>
+      <div class="md:hidden grow text-center text-xs">
+        <div>Fall / Winter 2023</div>
+      </div>
       <button id="burger" type="button" class="text-[2.5rem] text-[#c8c3b7] md:hidden">
         <i class="fa-solid fa-bars"></i>
       </button>
@@ -86,7 +90,7 @@
     <section class="flex mx-5 text-center">
       <div class="hidden md:inline-block">Fall / Winter 2023</div>
       <div class="grow">
-        <div id='shopify' class="w-full"></div>
+        <div id='shopify-widget' class="w-full"></div>
         <script type="text/javascript">
           /*<![CDATA[*/
           (function () {
@@ -100,7 +104,6 @@
             } else {
               loadScript();
             }
-
             function loadScript() {
               var script = document.createElement('script');
               script.async = true;
@@ -108,7 +111,6 @@
               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
               script.onload = ShopifyBuyInit;
             }
-
             function ShopifyBuyInit() {
               var client = ShopifyBuy.buildClient({
                 domain: 'rackzgallery.myshopify.com',
@@ -117,7 +119,7 @@
               ShopifyBuy.UI.onReady(client).then(function (ui) {
                 ui.createComponent('collection', {
                   id: '607678955868',
-                  node: document.getElementById('shopify'),
+                  node: document.getElementById('shopify-widget'),
                   moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
                   options: {
                     "product": {
@@ -131,8 +133,6 @@
                           }
                         },
                         "title": {
-                          "font-family": "Arial, Helvetica, sans-serif",
-                          // "font-family": "Quantico, sans-serif",
                           "font-size": "16px",
                           "color": "#000000"
                         },
@@ -141,32 +141,20 @@
                           "padding-top": "14.5px",
                           "padding-bottom": "14.5px",
                           ":hover": {
-                            "background-color": "#e6e6e6"
+                            "background-color": "#000000"
                           },
-                          "background-color": "#ffffff",
+                          "background-color": "#000000",
                           ":focus": {
-                            "background-color": "#e6e6e6"
+                            "background-color": "#000000"
                           },
                           "border-radius": "0px",
-                          "padding-left": "0px",
-                          "padding-right": "0px"
+                          "padding-left": "15px",
+                          "padding-right": "15px"
                         },
                         "quantityInput": {
                           "font-size": "13px",
                           "padding-top": "14.5px",
                           "padding-bottom": "14.5px"
-                        },
-                        "price": {
-                          "font-family": "Arial, Helvetica, sans-serif"
-                          // "font-family": "Quantico, sans-serif"
-                        },
-                        "compareAt": {
-                          "font-family": "Arial, Helvetica, sans-serif"
-                          // "font-family": "Quantico, sans-serif"
-                        },
-                        "unitPrice": {
-                          "font-family": "Arial, Helvetica, sans-serif"
-                          // "font-family": "Quantico, sans-serif"
                         }
                       },
                       "buttonDestination": "modal",
@@ -177,10 +165,7 @@
                       "isButton": true,
                       "text": {
                         "button": "View product"
-                      },
-                      // "googleFonts": [
-                      //   "Quantico"
-                      // ]
+                      }
                     },
                     "productSet": {
                       "styles": {
@@ -211,15 +196,15 @@
                           "padding-top": "14.5px",
                           "padding-bottom": "14.5px",
                           ":hover": {
-                            "background-color": "#e6e6e6"
+                            "background-color": "#000000"
                           },
-                          "background-color": "#ffffff",
+                          "background-color": "#000000",
                           ":focus": {
-                            "background-color": "#e6e6e6"
+                            "background-color": "#000000"
                           },
                           "border-radius": "0px",
-                          "padding-left": "0px",
-                          "padding-right": "0px"
+                          "padding-left": "15px",
+                          "padding-right": "15px"
                         },
                         "quantityInput": {
                           "font-size": "13px",
@@ -227,59 +212,24 @@
                           "padding-bottom": "14.5px"
                         },
                         "title": {
-                          "font-family": "Arial, Helvetica, sans-serif",
-                          // "font-family": "Quantico, sans-serif",
+                          "font-family": "Arial, Helvetica Neue, Helvetica, sans-serif",
                           "font-weight": "bold",
                           "font-size": "26px",
                           "color": "#4c4c4c"
                         },
                         "price": {
-                          "font-family": "Arial, Helvetica, sans-serif",
-                          // "font-family": "Quantico, sans-serif",
-                          "font-weight": "normal",
-                          "font-size": "14px",
-                          "color": "#4c4c4c"
+                          "font-size": "14px"
                         },
                         "compareAt": {
-                          "font-family": "Arial, Helvetica, sans-serif",
-                          // "font-family": "Quantico, sans-serif",
-                          "font-weight": "normal",
-                          "font-size": "11.9px",
-                          "color": "#4c4c4c"
+                          "font-size": "11.9px"
                         },
                         "unitPrice": {
-                          "font-family": "Arial, Helvetica, sans-serif",
-                          // "font-family": "Quantico, sans-serif",
-                          "font-weight": "normal",
-                          "font-size": "11.9px",
-                          "color": "#4c4c4c"
-                        },
-                        "description": {
-                          // "font-family": "Quantico, sans-serif"
-                          "font-family": "Arial, Helvetica, sans-serif"
+                          "font-size": "11.9px"
                         }
                       },
-                      // "googleFonts": [
-                      //   "Quantico"
-                      // ],
                       "text": {
                         "button": "Add to cart"
                       }
-                    },
-                    "option": {
-                      "styles": {
-                        "label": {
-                          // "font-family": "Quantico, sans-serif"
-                          "font-family": "Arial, Helvetica, sans-serif"
-                        },
-                        "select": {
-                          // "font-family": "Quantico, sans-serif"
-                          "font-family": "Arial, Helvetica, sans-serif"
-                        }
-                      },
-                      // "googleFonts": [
-                      //   "Quantico"
-                      // ]
                     },
                     "cart": {
                       "styles": {
@@ -288,11 +238,11 @@
                           "padding-top": "14.5px",
                           "padding-bottom": "14.5px",
                           ":hover": {
-                            "background-color": "#e6e6e6"
+                            "background-color": "#000000"
                           },
-                          "background-color": "#ffffff",
+                          "background-color": "#000000",
                           ":focus": {
-                            "background-color": "#e6e6e6"
+                            "background-color": "#000000"
                           },
                           "border-radius": "0px"
                         }
@@ -301,17 +251,20 @@
                         "total": "Subtotal",
                         "notice": "",
                         "button": "Checkout"
+                      },
+                      "contents": {
+                        "note": true
                       }
                     },
                     "toggle": {
                       "styles": {
                         "toggle": {
-                          "background-color": "#ffffff",
+                          "background-color": "#000000",
                           ":hover": {
-                            "background-color": "#e6e6e6"
+                            "background-color": "#000000"
                           },
                           ":focus": {
-                            "background-color": "#e6e6e6"
+                            "background-color": "#000000"
                           }
                         },
                         "count": {
@@ -343,7 +296,8 @@
       </ol>
       <section id="mobile-footer" class="text-center pb-4">
         <form id="join" class="px-4 flex">
-          <input id="email" type="email" placeholder="Join our newsletter" class="border-b border-b-white bg-black placeholder:text-white placeholder:uppercase w-56 px-4 pt-2 outline-none">
+          <input id="email" type="email" placeholder="Join our newsletter"
+            class="border-b border-b-white bg-black placeholder:text-white placeholder:uppercase w-56 px-4 pt-2 outline-none">
           <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
         </form>
         <div class="text-3xl">
@@ -363,7 +317,8 @@
   <footer id="footer" class="hidden text-white bg-[#c8c3b7] text-sm md:flex md:justify-around md:items-center">
     <a href="/policies/" class="uppercase">Privacy policies</a>
     <form id="join">
-      <input id="email" type="email" placeholder="Join our newsletter" class="bg-[#c8c3b7] border-b border-b-white placeholder:text-white placeholder:uppercase w-56 px-4 pt-2 outline-none">
+      <input id="email" type="email" placeholder="Join our newsletter"
+        class="bg-[#c8c3b7] border-b border-b-white placeholder:text-white placeholder:uppercase w-56 px-4 pt-2 outline-none">
       <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
     </form>
     <div class="text-3xl">
