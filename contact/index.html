@@ -51,7 +51,6 @@
   <script src="../assets/basic.js"></script>
   <script>
     const contact = async e => {
-      e.preventDefault();
       if (e.target.status.checked) {
         try {
           await join(e.target.email_address.value)
