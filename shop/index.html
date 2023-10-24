@@ -10,6 +10,8 @@
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.12.0/tsparticles.bundle.min.js" integrity="sha512-W/UhCgUnBrqWd6HtR1wS+twNkVYvwxB1Hqtm9d/0HOWynEcr7t1BOQn1x55ziHQJtn+tU0Fzih1SAawRr6YFmA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style type="text/tailwindcss">
@@ -48,19 +50,7 @@
     gtag('config', 'G-NG984MWYM8');
   </script>
 
-  <script>
-    window.addEventListener('load', () => {
-      const burger = document.getElementById('burger');
-      burger.addEventListener('click', () => {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.remove('hidden');
-        const close = document.getElementById('close-menu');
-        close.addEventListener('click', () => {
-          menu.classList.add('hidden');
-        });
-      });
-    });
-  </script>
+  <script src="../assets/basic.js"></script>
 </head>
 
 <body>
@@ -72,7 +62,7 @@
       <div class="md:hidden grow text-center text-xs">
         <div>Fall / Winter 2023</div>
       </div>
-      <button id="burger" type="button" class="text-[2.5rem] text-[#c8c3b7] md:hidden">
+      <button id="burger" type="button" class="text-[2.5rem] text-[#c8c3b7] md:hidden" title="menu">
         <i class="fa-solid fa-bars"></i>
       </button>
       <menu id="main-menu" class="grow hidden md:block">
@@ -283,7 +273,7 @@
     </section>
     <menu id="mobile-menu" class="absolute top-0 right-0 bottom-0 text-white bg-black flex flex-col hidden opacity-80">
       <div class="w-full text-2xl text-right">
-        <button id="close-menu" class="pt-6 px-4"><i class="fa-solid fa-xmark"></i></button>
+        <button id="close-menu" type="button" class="pt-6 px-4"><i class="fa-solid fa-xmark" title="close menu"></i></button>
       </div>
       <ol class="uppercase p-10 pt-0 grow">
         <li class="font-bold"><a href="/shop">Shop</a></li>
@@ -295,10 +285,10 @@
         <li><a href="/contact">Contact</a></li>
       </ol>
       <section id="mobile-footer" class="text-center pb-4">
-        <form id="join" class="px-4 flex">
-          <input id="email" type="email" placeholder="Join our newsletter"
+        <form id="mobile-join" class="px-4 flex">
+          <input id="mobile-email" type="email" placeholder="Join our newsletter"
             class="border-b border-b-white bg-black placeholder:text-white placeholder:uppercase w-56 px-4 pt-2 outline-none">
-          <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
+          <button type="submit" class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
         </form>
         <div class="text-3xl">
           <a href="https://www.instagram.com/rackz_gallery/" target="_blank" class="hover:text-gray-500">
@@ -319,7 +309,7 @@
     <form id="join">
       <input id="email" type="email" placeholder="Join our newsletter"
         class="bg-[#c8c3b7] border-b border-b-white placeholder:text-white placeholder:uppercase w-56 px-4 pt-2 outline-none">
-      <button class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
+      <button type="submit" class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
     </form>
     <div class="text-3xl">
       <a href="https://www.instagram.com/rackz_gallery/" target="_blank" class="hover:text-gray-500">
