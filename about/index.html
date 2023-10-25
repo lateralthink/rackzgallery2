@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rackz Gallery - About</title>
   <link rel="icon" sizes="auto" href="../assets/logo.svg">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.17.5/js/uikit.min.js" integrity="sha512-+/7czFN9GMwraqfxJpTgyrdWKYZO3WjId2VlyVunk0s4hvgClpeTidYXiD8w/Kn18134qLGsBG/1sXZJ1L13iQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.17.5/js/uikit-icons.min.js" integrity="sha512-FlfO/IeODm/sDZ99QuxpHfGKV1hC0nua+b0QRRPM+9i07Ly9r89Py+O3fdXQKduanzGUILoHrR6IzqfnAEqslA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.12.0/tsparticles.bundle.min.js" integrity="sha512-W/UhCgUnBrqWd6HtR1wS+twNkVYvwxB1Hqtm9d/0HOWynEcr7t1BOQn1x55ziHQJtn+tU0Fzih1SAawRr6YFmA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -36,6 +40,10 @@
     #mobile-footer > * {
       @apply my-4
     }
+
+    .uk-icon {
+      fill: #c8c3b7;
+    }
   </style>
 
   <!-- Google tag (gtag.js) -->
@@ -58,9 +66,11 @@
         <img src="../assets/logo.svg" alt="Rackz Gallery" class="w-[50px] md:w-[100px] md:bg-black bg-[#c8c3b7]">
       </a>
       <div class="md:hidden grow text-center text-xs"><div>About</div></div>
+
       <button id="burger" type="button" class="text-[2.5rem] text-[#c8c3b7] md:hidden" title="menu">
-        <i class="fa-solid fa-bars"></i>
+        <span uk-icon="icon: menu; ratio: 2"></span>
       </button>
+
       <menu id="main-menu" class="grow hidden md:block">
         <ol class="flex justify-center uppercase text-xs">
           <li><a href="/shop">Shop</a></li>
@@ -75,14 +85,13 @@
     </header>
     <section class="md:flex md:gap-20 mx-5 mb-10">
       <div class="my-10 md:my-0 md:w-2/6 mb-5 md:ml-10">
-        <p>
+        <p class="text-sm">
           Rackz Gallery is a free and artistic soul born from the fusion of diverse worldviews in a town called Sant Cugat del Valles in Barcelona. Almost everything finds a place in our universe, but always in our unique way, as we have exacting standards when it comes to our perspective. This exacting nature ensures that art and quality emanate from everything we create.
         </p>
       </div>
       <div class="media text-center text-sm">
-        <figure class="flex justify-center">
-          <img src="../assets/eye.jpeg" alt="Rackz's eye">
-          <figcaption class="my-auto -mx-16 rotate-90 text-gray-400">Chaos makes the muse.</figcaption>
+        <figure class="flex justify-center md:my-20">
+          <img src="../assets/eye.jpeg" alt="Rackz's eye" class="md:scale-125">
         </figure>
       </div>
     </section>
@@ -99,12 +108,13 @@
         <li class="font-bold"><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
       </ol>
-      <section id="mobile-footer" class="text-center pb-4">
+      <section id="mobile-footer" class="pb-4">
         <form id="mobile-join" class="px-4 flex">
-          <input id="mobile-email" type="email" placeholder="Join our newsletter" class="border-b border-b-white bg-black placeholder:text-white placeholder:uppercase w-56 px-4 pt-2 outline-none">
+          <input id="mobile-email" type="email" placeholder="Join our newsletter"
+            class="border-b border-b-white bg-black placeholder:text-white placeholder:uppercase w-56 px-4 pt-2 outline-none">
           <button type="submit" class="hover:text-gray-500 hover:bg-gray-200 px-2 py-2">Sign up</button>
         </form>
-        <div class="text-3xl">
+        <div class="text-3xl pl-8">
           <a href="https://www.instagram.com/rackz_gallery/" target="_blank" class="hover:text-gray-500">
             <i class="fa-brands fa-instagram"></i>
           </a>
@@ -112,8 +122,8 @@
             <i class="fa-brands fa-youtube"></i>
           </a>
         </div>
-        <div class="copyright">&copy; 2023 Rackz Gallery</div>
-        <a href="/policies/" class="uppercase">Privacy policies</a>
+        <div class="copyright pl-8">&copy; 2023 Rackz Gallery</div>
+        <a href="/policies/" class="uppercase pl-8">Privacy policies</a>
       </section>
     </menu>
   </main>
