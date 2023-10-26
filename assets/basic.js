@@ -83,7 +83,7 @@ window.addEventListener('load', () => {
           "background": "#000"
         },
         "button": {
-          "background": "#f1d600"
+          "background": "#c8c3b7"
         },
       }
     });
