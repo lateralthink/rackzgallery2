@@ -75,4 +75,15 @@ window.addEventListener('load', () => {
   joinForm.addEventListener('submit', joinDesktop);
   const mobileJoinForm = document.getElementById('mobile-join');
   mobileJoinForm.addEventListener('submit', joinMobile);
+
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#000"
+      },
+      "button": {
+        "background": "#f1d600"
+      },
+    }
+  })
 });
