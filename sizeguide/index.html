@@ -47,6 +47,22 @@
     .uk-icon {
       fill: #c8c3b7;
     }
+
+    table {
+      @apply w-full md:w-5/12 border border-black text-center mb-8;
+    }
+
+    tr, th, td {
+      @apply border border-black;
+    }
+
+    th {
+      @apply py-2 text-white bg-[#c8c3b7];
+    }
+
+    td {
+      @apply py-4;
+    }
   </style>
 
   <!-- Google tag (gtag.js) -->
@@ -89,8 +105,171 @@
       </menu>
     </header>
     <section class="flex gap-10 mx-5 mb-5">
-      <div class="md:grow md:px-28 md:mb-28">
-        Coming soon
+      <div class="md:flex md:flex-wrap md:justify-around w-full">
+
+        <table>
+          <thead>
+            <tr>
+              <th class="uppercase">Camisas</th>
+              <th class="uppercase">M</th>
+              <th class="uppercase">L</th>
+              <th class="uppercase">XL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="uppercase">A pecho</td><td>56</td><td>58</td><td>61</td>
+            </tr>
+            <tr>
+              <td class="uppercase">B bajo</td><td>61</td><td>63</td><td>66</td>
+            </tr>
+            <tr>
+              <td class="uppercase">C alto</td><td>69,5</td><td>70</td><td>78</td>
+            </tr>
+            <tr>
+              <td class="uppercase">D hombro</td><td>17,4</td><td>18</td><td>18,7</td>
+            </tr>
+            <tr>
+              <td class="uppercase">E manga</td><td>62,5</td><td>63</td><td>64</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th class="uppercase">Sobrecamisas</th>
+              <th class="uppercase">M</th>
+              <th class="uppercase">L</th>
+              <th class="uppercase">XL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="uppercase">A pecho</td><td>58</td><td>60</td><td>63</td>
+            </tr>
+            <tr>
+              <td class="uppercase">B bajo</td><td>60</td><td>62</td><td>65</td>
+            </tr>
+            <tr>
+              <td class="uppercase">C alto</td><td>72</td><td>73</td><td>74</td>
+            </tr>
+            <tr>
+              <td class="uppercase">D hombro</td><td>16,4</td><td>17</td><td>17,7</td>
+            </tr>
+            <tr>
+              <td class="uppercase">E manga</td><td>69</td><td>70</td><td>71</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th class="uppercase">Chaquetas</th>
+              <th class="uppercase">M</th>
+              <th class="uppercase">L</th>
+              <th class="uppercase">XL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="uppercase">A pecho</td><td>63</td><td>65</td><td>68</td>
+            </tr>
+            <tr>
+              <td class="uppercase">B bajo</td><td>65</td><td>66</td><td>67</td>
+            </tr>
+            <tr>
+              <td class="uppercase">C alto</td><td>70</td><td>71</td><td>72</td>
+            </tr>
+            <tr>
+              <td class="uppercase">D hombro</td><td>17,4</td><td>18</td><td>18,7</td>
+            </tr>
+            <tr>
+              <td class="uppercase">E manga</td><td>64,5</td><td>65</td><td>65,5</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th class="uppercase">Camisetas</th>
+              <th class="uppercase">M</th>
+              <th class="uppercase">L</th>
+              <th class="uppercase">XL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="uppercase">A pecho</td><td>54</td><td>56</td><td>59</td>
+            </tr>
+            <tr>
+              <td class="uppercase">B bajo</td><td>54,3</td><td>56,3</td><td>59,5</td>
+            </tr>
+            <tr>
+              <td class="uppercase">C alto</td><td>73</td><td>74</td><td>75</td>
+            </tr>
+            <tr>
+              <td class="uppercase">D hombro</td><td>17,4</td><td>18</td><td>18,7</td>
+            </tr>
+            <tr>
+              <td class="uppercase">E manga</td><td>20,5</td><td>21</td><td>21,8</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th class="uppercase">Sudadera</th>
+              <th class="uppercase">M</th>
+              <th class="uppercase">L</th>
+              <th class="uppercase">XL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="uppercase">A pecho</td><td>62</td><td>64</td><td>67</td>
+            </tr>
+            <tr>
+              <td class="uppercase">B bajo</td><td>63</td><td>65</td><td>68</td>
+            </tr>
+            <tr>
+              <td class="uppercase">C alto</td><td>70</td><td>71</td><td>72</td>
+            </tr>
+            <tr>
+              <td class="uppercase">D hombro</td><td>17,4</td><td>18</td><td>18,8</td>
+            </tr>
+            <tr>
+              <td class="uppercase">E manga</td><td>62,5</td><td>63</td><td>63,8</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th class="uppercase">Pantalon</th>
+              <th class="uppercase">M</th>
+              <th class="uppercase">L</th>
+              <th class="uppercase">XL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="uppercase">A cintura</td><td>48</td><td>50</td><td>53</td>
+            </tr>
+            <tr>
+              <td class="uppercase">B largo</td><td>107</td><td>108</td><td>109,5</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="flex flex-col md:flex-row justify-center">
+          <img src="../assets/pantalon.png" alt="Medidas pantalón">
+          <img src="../assets/jersey.png" alt="Medidas jersey">
+        </div>
       </div>
     </section>
     <menu id="mobile-menu" class="absolute top-0 right-0 bottom-0 text-white bg-black flex flex-col hidden opacity-80">
