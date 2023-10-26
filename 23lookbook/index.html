@@ -96,7 +96,7 @@
     const closeSwiper = () => {
       const main = document.getElementById('main');
       const footer = document.getElementById('footer');
-      const sl = document.getElementById('slider');
+      const sl = document.getElementById('slider-container');
       main.classList.remove('hidden');
       footer.classList.remove('md:hidden');
       sl.classList.add('hidden');
@@ -107,7 +107,7 @@
     const slider = initialSlide => {
       const main = document.getElementById('main');
       const footer = document.getElementById('footer');
-      const sl = document.getElementById('slider');
+      const sl = document.getElementById('slider-container');
       main.classList.add('hidden');
       footer.classList.add('md:hidden');
       sl.classList.remove('hidden');
@@ -247,8 +247,8 @@
     <div class="copyright">&copy; 2023 Rackz Gallery</div>
   </footer>
 
-  <div class="h-screen flex items-center">
-    <div id="slider" class="swiper shrink md:w-screen md:h-screen hidden">
+  <div id="slider-container" class="h-screen flex items-center hidden">
+    <div id="slider" class="swiper shrink md:w-screen md:h-screen">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
