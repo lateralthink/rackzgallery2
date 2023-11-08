@@ -130,6 +130,11 @@
                     "product": {
                       "styles": {
                         "product": {
+                          "@media (max-width: 600px)": {
+                            "min-width": "calc(50% - 15px) !important",
+                            "width": "calc(50% - 15px) !important",
+                            "margin-top": "15px !important"
+                          },
                           "@media (min-width: 601px)": {
                             "max-width": "calc(20% - 40px)",
                             "margin-left": "40px",
@@ -175,6 +180,10 @@
                     "productSet": {
                       "styles": {
                         "products": {
+                          "@media (max-width: 600px)": {
+                            "display": "flex",
+                            "flex-wrap": "wrap"
+                          },
                           "@media (min-width: 601px)": {
                             "margin-left": "-40px"
                           }
