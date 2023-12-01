@@ -46,6 +46,22 @@
     .uk-icon {
       fill: #c8c3b7;
     }
+
+    .media-selector {
+      @apply  px-4 py-2 cursor-pointer;
+    }
+
+    .media-selector.active {
+      @apply text-white bg-[#c8c3b7] cursor-default;
+    }
+
+    .media {
+      @apply text-center text-sm md:grow md:px-20 md:mb-28 hidden;
+    }
+
+    .media.active {
+      @apply block;
+    }
   </style>
 
   <!-- Google tag (gtag.js) -->
@@ -77,6 +93,28 @@
   <!-- End Meta Pixel Code -->
 
   <script src="../assets/basic.js"></script>
+  <script>
+    const select = e => {
+      const selectors = document.getElementsByClassName('media-selector active');
+      for (const selector of selectors) {
+        selector.classList.remove('active');
+      }
+      const medias = document.getElementsByClassName('media active');
+      for (const media of medias) {
+        media.classList.remove('active');
+      }
+      e.target.classList.add('active');
+      const video = document.querySelector(`.media[data-video=${ e.target.getAttribute('data-video') }]`);
+      video.classList.add('active');
+    }
+
+    window.addEventListener('load', () => {
+      const selectors = document.getElementsByClassName('media-selector');
+      for (const selector of selectors) {
+        selector.addEventListener('click', select)
+      }
+    });
+  </script>
 </head>
 
 <body>
@@ -107,8 +145,19 @@
       </menu>
     </header>
     <section class="flex gap-10 mx-5 mb-5 text-center">
-      <div class="hidden md:inline-block text-sm">PANDORA by Rackz Gallery</div>
-      <div class="media text-center text-sm md:grow md:px-20 md:mb-28">
+      <div class="hidden md:inline-block text-sm">
+        <div class="media-selector active" data-video="aeon">AEON by Rackz Gallery</div>
+        <div class="media-selector" data-video="pandora">PANDORA by Rackz Gallery</div>
+      </div>
+      <div class="media active" data-video="aeon">
+        <iframe class="aspect-video" width="100%" height="100%" src="https://www.youtube.com/embed/emlX3q0MgFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- <p class="mt-4">Filmed by Blai Costa, directed by Alejandro Martínez & edited by both.</p>
+        <p>Photography by Gerard Riera. Original music from HUECO Prods.</p>
+        <p class="mt-2">
+          Starring; Stevie Culhane, Andrew Verde, Daniel Jenks, Pol Catena, Pinyata & Alejandro Martínez.
+        </p> -->
+      </div>
+      <div class="media" data-video="pandora">
         <iframe class="aspect-video" width="100%" height="100%" src="https://www.youtube.com/embed/334gRX6o9QQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p class="mt-4">Filmed by Blai Costa, directed by Alejandro Martínez & edited by both.</p>
         <p>Photography by Gerard Riera. Original music from HUECO Prods.</p>

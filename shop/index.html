@@ -49,6 +49,13 @@
     .uk-icon {
       fill: #c8c3b7;
     }
+
+
+    /* @media screen and (max-width: 749px) { */
+    .slideshow__media.banner__media { height: 100vh !important; }
+    .slideshow__text-wrapper.banner__content { display: none !important; }
+
+    /* } */
   </style>
 
   <!-- Google tag (gtag.js) -->
@@ -209,19 +216,19 @@
                       }
                     },
                     "modalProduct": {
-                      "events": {
-                        afterRender: function (component) {
-                          const slider = component.node.querySelector('.shopify-buy__product-img-wrapper');
-                          const img = slider.querySelector('img[data-element="product.img"]');
-                          img.addEventListener('click', () => {
-                            if (!window.screenTop && !window.screenY) {
-                              document.exitFullscreen();
-                            } else {
-                              img.requestFullscreen();
-                            }
-                          })
-                        }
-                      },
+                      // "events": {
+                      //   afterRender: function (component) {
+                      //     const slider = component.node.querySelector('.shopify-buy__product-img-wrapper');
+                      //     const img = slider.querySelector('img[data-element="product.img"]');
+                      //     img.addEventListener('click', () => {
+                      //       img.style.position = 'relative';
+                      //       img.style.top = 0;
+                      //       img.style.bottom = 0;
+                      //       img.style.left = 0;
+                      //       img.style.right = 0;
+                      //     })
+                      //   }
+                      // },
                       "contents": {
                         "img": false,
                         "imgWithCarousel": true,
