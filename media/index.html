@@ -56,11 +56,23 @@
     }
 
     .media {
-      @apply text-center text-sm md:grow md:px-20 md:mb-28 hidden;
+      @apply text-center text-sm md:grow md:px-20 md:mb-28 hidden w-full;
     }
 
     .media.active {
       @apply block;
+    }
+
+    .option {
+      @apply hidden;
+    }
+
+    .option.active {
+      @apply block;
+    }
+
+    .drop-option.active {
+      @apply hidden;
     }
   </style>
 
@@ -108,10 +120,57 @@
       video.classList.add('active');
     }
 
+    const mobileSelector = e => {
+      e.stopPropagation();
+      e.preventDefault();
+      console.log(e.currentTarget.getAttribute('data-video'))
+
+      var selectedOption = document.getElementsByClassName('option');
+      for (const option of selectedOption) {
+        if (option.classList.contains('active')) {
+          option.classList.remove('active');
+        } else if (option.getAttribute('data-video') === e.currentTarget.getAttribute('data-video')) {
+          option.classList.add('active');
+        }
+      }
+
+      selectedOption = document.getElementsByClassName('drop-option');
+      for (const option of selectedOption) {
+        if (option.classList.contains('active')) {
+          option.classList.remove('active');
+        } else if (option.getAttribute('data-video') === e.currentTarget.getAttribute('data-video')) {
+          option.classList.add('active');
+        }
+      }
+
+      selectedOption = document.getElementsByClassName('media');
+      for (const option of selectedOption) {
+        if (option.classList.contains('active')) {
+          option.classList.remove('active');
+        } else if (option.getAttribute('data-video') === e.currentTarget.getAttribute('data-video')) {
+          option.classList.add('active');
+        }
+      }
+
+      document.getElementById('media-drop').classList.add('hidden');
+    }
+
     window.addEventListener('load', () => {
       const selectors = document.getElementsByClassName('media-selector');
       for (const selector of selectors) {
         selector.addEventListener('click', select)
+      }
+      document.getElementById('media-select').addEventListener('click', () => {
+        const menu = document.getElementById('media-drop');
+        if (menu.classList.contains('hidden')) {
+          menu.classList.remove('hidden');
+        } else {
+          menu.classList.add('hidden');
+        }
+      });
+      const mobileSelectors = document.getElementsByClassName('drop-option');
+      for (const selector of mobileSelectors) {
+        selector.addEventListener('click', mobileSelector);
       }
     });
   </script>
@@ -124,8 +183,27 @@
         <img src="../assets/logo.svg" alt="Rackz Gallery" class="w-[50px] md:w-[100px] md:bg-black bg-[#c8c3b7]">
       </a>
       <div class="md:hidden grow text-center text-xs">
-        <div>PANDORA</div>
-        <div>by Rackz Gallery</div>
+        <div id="media-select" class="flex justify-center items-center gap-2">
+          <div class="option active" data-video="aeon">
+            <div>AEON</div>
+            <div>by Rackz Gallery</div>
+          </div>
+          <div class="option" data-video="pandora">
+            <div>PANDORA</div>
+            <div>by Rackz Gallery</div>
+          </div>
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
+        <div id="media-drop" class="border absolute left-1/2 transform -translate-x-1/2 z-0 mt-2 px-4 py-2 bg-white hidden">
+          <div class="drop-option active" data-video="aeon">
+            <div>AEON</div>
+            <div>by Rackz Gallery</div>
+          </div>
+          <div class="drop-option" data-video="pandora">
+            <div>PANDORA</div>
+            <div>by Rackz Gallery</div>
+          </div>
+        </div>
       </div>
 
       <button id="burger" type="button" class="text-[2.5rem] text-[#c8c3b7] md:hidden" title="menu">
